@@ -660,7 +660,16 @@ footer .socialbar,.fgrid,.legal,.credit{border-color:#3d342b!important}
 .s-reel h2 .ser{display:flex!important;width:max-content;max-width:100%;margin-top:22px!important;line-height:1!important}
 .s-reel .cap .btn{margin-top:22px}
 @media (max-width:860px){.s-reel h2 .ser{width:auto;margin-top:16px!important}.s-reel .cap .btn{margin-top:16px}}
-.about .g:has(details[open]) .portrait.sq img{aspect-ratio:auto;height:var(--ph,auto);min-height:0}body.foot:not(.lite) .lg-tag{opacity:1;transform:none}body.foot:not(.lite) .tg-short{color:var(--white)}body.foot:not(.lite) .lg-name{opacity:0;transform:translateY(-6px)}</style>
+.about .g:has(details[open]) .portrait.sq img{aspect-ratio:auto;height:var(--ph,auto);min-height:0}body.foot:not(.lite) .lg-tag{opacity:1;transform:none}body.foot:not(.lite) .tg-short{color:var(--white)}body.foot:not(.lite) .lg-name{opacity:0;transform:translateY(-6px)}/* mobile landing v2 */@media (max-width:860px){
+.cover .slides{height:max(calc(100svh - 64px - 68px),520px)!important}
+.s-reel .bgvid{height:100%!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:center 30%;top:0!important;bottom:0!important}
+.s-reel .shade{bottom:0!important;background:linear-gradient(180deg,rgba(11,11,12,.35) 0%,rgba(11,11,12,0) 22%,rgba(11,11,12,0) 38%,rgba(11,11,12,.7) 62%,rgba(11,11,12,.95) 100%)!important}
+.s-reel .cap{top:auto!important;bottom:28px!important}
+.s-reel .sound{top:14px!important;bottom:auto!important;right:12px!important}
+.s-reel h2{text-shadow:0 2px 24px rgba(0,0,0,.45)}
+.vgrid{padding:14px 0 18px!important;align-items:stretch!important}
+body.atcover .dock{opacity:0;visibility:hidden}
+}</style>
 
 <!-- loading screen -->
 <div class="loader" id="loader" aria-hidden="true">
@@ -1190,5 +1199,5 @@ document.querySelectorAll("[data-credits]").forEach(a=>a.addEventListener("click
 })();
 </script>
 
-<script>/* keep the bio photo the same size when the full bio is expanded */(function(){const g=document.querySelector(".about .g"),im=g&&g.querySelector(".portrait.sq img"),d=g&&g.querySelector("details");if(!im)return;const set=()=>{if(!d||!d.open)g.style.setProperty("--ph",im.getBoundingClientRect().height+"px")};if(window.ResizeObserver)new ResizeObserver(set).observe(im);addEventListener("resize",set);addEventListener("load",set);set()})();</script><script>/* show #bethegood in the header once the footer is in view */(function(){const f=document.querySelector("footer");if(!f||!window.IntersectionObserver)return;new IntersectionObserver(e=>document.body.classList.toggle("foot",e[0].isIntersecting),{threshold:.2}).observe(f)})();</script></body>
+<script>/* keep the bio photo the same size when the full bio is expanded */(function(){const g=document.querySelector(".about .g"),im=g&&g.querySelector(".portrait.sq img"),d=g&&g.querySelector("details");if(!im)return;const set=()=>{if(!d||!d.open)g.style.setProperty("--ph",im.getBoundingClientRect().height+"px")};if(window.ResizeObserver)new ResizeObserver(set).observe(im);addEventListener("resize",set);addEventListener("load",set);set()})();</script><script>/* show #bethegood in the header once the footer is in view */(function(){const f=document.querySelector("footer");if(!f||!window.IntersectionObserver)return;new IntersectionObserver(e=>document.body.classList.toggle("foot",e[0].isIntersecting),{threshold:.2}).observe(f)})();</script><script>/* mobile: keep the follow pill off the landing screen */(function(){const c=document.querySelector(".cover");if(!c)return;const up=()=>document.body.classList.toggle("atcover",scrollY<c.offsetHeight-140);addEventListener("scroll",up,{passive:true});addEventListener("resize",up);up()})();</script></body>
 </html>
