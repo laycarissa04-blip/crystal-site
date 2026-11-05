@@ -668,7 +668,18 @@ footer .socialbar,.fgrid,.legal,.credit{border-color:#3d342b!important}
 .s-reel .sound{top:calc(var(--vt,300px) + (100vw - 2 * var(--g,24px)) * .5625 - 46px)!important;bottom:auto!important;right:calc(var(--g,24px) + 10px)!important;transform:scale(.88);transform-origin:right bottom}
 .vgrid{padding:14px 0 18px!important;align-items:stretch!important}
 body.atcover .dock{opacity:0;visibility:hidden}
-}/* buttons one line */.btn,.vc a.more,details.more summary,.cta{white-space:nowrap}.vc a.more{display:inline-block}@media (max-width:860px){.btn{letter-spacing:.14em;padding-inline:20px}.vc a.more{letter-spacing:.1em;font-size:10.5px}}@media (max-width:360px){.btn{letter-spacing:.1em;padding-inline:16px;font-size:11px}.vc a.more{letter-spacing:.06em;font-size:10px}}</style>
+}/* buttons one line */.btn,.vc a.more,details.more summary,.cta{white-space:nowrap}.vc a.more{display:inline-block}@media (max-width:860px){.btn{letter-spacing:.14em;padding-inline:20px}.vc a.more{letter-spacing:.1em;font-size:10.5px}}@media (max-width:360px){.btn{letter-spacing:.1em;padding-inline:16px;font-size:11px}.vc a.more{letter-spacing:.06em;font-size:10px}}.micons{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}.micons a{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.22);color:#f1ebe2;transition:background .25s,border-color .25s,color .25s,transform .25s}.micons a:hover{background:var(--orange);border-color:var(--orange);color:#fff;transform:translateY(-2px)}.micons svg{width:19px;height:19px}@media (max-width:860px){.s-reel .pcover{pointer-events:auto}}.vpp,.vbig,.vspin{display:none}
+@media (max-width:860px){
+.vpp{position:absolute;z-index:4;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;color:#fff;background:rgba(11,11,12,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.35);cursor:pointer;padding:0}
+.vpp svg{width:14px;height:14px}
+.vbig{position:absolute;z-index:3;display:grid;place-items:center;pointer-events:none;opacity:0;transition:opacity .25s}
+.vbig.show{opacity:1;pointer-events:auto}
+.vbig button{width:64px;height:64px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(11,11,12,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;display:grid;place-items:center;cursor:pointer;padding:0}
+.vbig button svg{width:24px;height:24px;margin-left:3px}
+.vspin{position:absolute;z-index:3;width:38px;height:38px;border-radius:50%;border:3px solid rgba(255,255,255,.25);border-top-color:#fff;animation:vspin .8s linear infinite;opacity:0;transition:opacity .2s;pointer-events:none}
+.vspin.show{opacity:1}
+@keyframes vspin{to{transform:rotate(360deg)}}
+}@media (max-width:860px){.s-reel h2 .ser{margin-top:calc(var(--vhh,200px) + 36px)!important}}</style>
 
 <!-- loading screen -->
 <div class="loader" id="loader" aria-hidden="true">
@@ -705,14 +716,7 @@ body.atcover .dock{opacity:0;visibility:hidden}
     <div class="side">
       <div><div class="label" style="color:var(--gold-lt)">Email</div><div class="v">crystal@crystalfambrini.com</div></div>
       <div><div class="label" style="color:var(--gold-lt)">Follow</div>
-        <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:6px">
-          <a href="https://www.instagram.com/crystalfambrini/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.linkedin.com/in/crystalfambrini/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://www.youtube.com/crystalfambrini" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://www.facebook.com/crystalfambrini" target="_blank" rel="noopener">Facebook</a>
-          <a href="https://x.com/crystalfambrini" target="_blank" rel="noopener">X</a>
-          <a href="https://www.threads.com/@crystalfambrini" target="_blank" rel="noopener">Threads</a>
-        </div>
+        <div class="micons"><a href="https://www.instagram.com/crystalfambrini/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.linkedin.com/in/crystalfambrini/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="9.5" width="3.2" height="10.5"/><circle cx="5.6" cy="5.8" r="1.9"/><path d="M10 9.5h3v1.5c.5-.9 1.7-1.8 3.4-1.8 3.2 0 3.6 2.1 3.6 4.8V20h-3.2v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V20H10z"/></svg></a><a href="https://www.youtube.com/crystalfambrini" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.6 2.6 0 0 0 2.4 7.2 27 27 0 0 0 2 12a27 27 0 0 0 .4 4.8 2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8A27 27 0 0 0 22 12a27 27 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></svg></a><a href="https://www.facebook.com/crystalfambrini" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21h3z"/></svg></a><a href="https://x.com/crystalfambrini" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.6z"/></svg></a><a href="https://www.threads.com/@crystalfambrini" target="_blank" rel="noopener" aria-label="Threads" title="Threads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M16.5 11.2c-.4-2.3-2-3.4-4.2-3.4-2.6 0-4 1.8-4 4.2 0 2.6 1.6 4.2 3.9 4.2 2.1 0 3.6-1.3 3.6-3.1 0-1.9-1.6-2.7-3.4-2.7-1.4 0-2.6.6-2.6 1.9 0 1 .9 1.6 2 1.6"/><path d="M19.5 15.5c-1 3-3.6 5.5-7.5 5.5-5 0-9-3.6-9-9s4-9 9-9c4.3 0 7.2 2.4 8.2 6"/></svg></a></div>
       </div>
       <div style="font-size:13px"><a href="https://thehollywoodrealty.com/agents/crystal-fambrini/" target="_blank" rel="noopener">The Hollywood Realty ↗</a> · DRE # 02048873</div>
     </div>
@@ -1088,8 +1092,14 @@ addEventListener("keydown",e=>{if(e.key==="Escape")menu(false)});
   v.addEventListener("playing",hide);v.addEventListener("waiting",show);v.addEventListener("stalled",show);
   v.addEventListener("pause",now);v.addEventListener("seeking",()=>{if(v.paused||v.currentTime<.5)now();else show()});
   const fallback=()=>{v.src=mp4;v.play().catch(()=>{})};
-  /* load the stream once (no mp4-then-HLS source swap) */
-  if(src&&window.Hls&&Hls.isSupported()){const h=new Hls({maxBufferLength:30,startFragPrefetch:true});h.loadSource(src);h.attachMedia(v);h.on(Hls.Events.MANIFEST_PARSED,()=>{v.play().catch(()=>{})});h.on(Hls.Events.ERROR,(e,d)=>{if(d.fatal){h.destroy();fallback()}})}
+  /* iOS/phones: play the mp4 natively (reliable, light on data); HLS only on desktop */
+  const touch=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1)||matchMedia("(max-width:860px)").matches;
+  try{v.disableRemotePlayback=true}catch(e){}
+  const resume=()=>{const sl=v.closest(".slide");if(sl&&sl.classList.contains("on")&&v.paused&&!document.hidden)v.play().catch(()=>{})};
+  document.addEventListener("visibilitychange",resume);addEventListener("pageshow",resume);
+  v.addEventListener("click",()=>{if(v.paused)v.play().catch(()=>{})});if(pc)pc.addEventListener("click",()=>{if(v.paused)v.play().catch(()=>{})});
+  if(touch){v.preload="auto";fallback()}
+  else if(src&&window.Hls&&Hls.isSupported()){const h=new Hls({maxBufferLength:30,startFragPrefetch:true});h.loadSource(src);h.attachMedia(v);h.on(Hls.Events.MANIFEST_PARSED,()=>{v.play().catch(()=>{})});h.on(Hls.Events.ERROR,(e,d)=>{if(d.fatal){h.destroy();fallback()}})}
   else fallback();
 })();
 
@@ -1198,5 +1208,28 @@ document.querySelectorAll("[data-credits]").forEach(a=>a.addEventListener("click
 })();
 </script>
 
-<script>/* keep the bio photo the same size when the full bio is expanded */(function(){const g=document.querySelector(".about .g"),im=g&&g.querySelector(".portrait.sq img"),d=g&&g.querySelector("details");if(!im)return;const set=()=>{if(!d||!d.open)g.style.setProperty("--ph",im.getBoundingClientRect().height+"px")};if(window.ResizeObserver)new ResizeObserver(set).observe(im);addEventListener("resize",set);addEventListener("load",set);set()})();</script><script>/* show #bethegood in the header once the footer is in view */(function(){const f=document.querySelector("footer");if(!f||!window.IntersectionObserver)return;new IntersectionObserver(e=>document.body.classList.toggle("foot",e[0].isIntersecting),{threshold:.2}).observe(f)})();</script><script>/* mobile: keep the follow pill off the landing screen */(function(){const c=document.querySelector(".cover");if(!c)return;const up=()=>document.body.classList.toggle("atcover",scrollY<c.offsetHeight-140);addEventListener("scroll",up,{passive:true});addEventListener("resize",up);up()})();</script><script>/* mobile: title on top, showreel in a 16:9 box underneath */(function(){const sl=document.querySelector(".s-reel"),cv=document.querySelector(".cover");if(!sl||!cv)return;const cap=sl.querySelector(".cap"),h=cap&&cap.querySelector("h2");if(!h)return;function lay(){if(innerWidth>860){cv.style.removeProperty("--slh");return}const sr=sl.getBoundingClientRect(),g=Math.max(16,Math.round(h.getBoundingClientRect().left-sr.left));const vt=cap.offsetTop+cap.offsetHeight+22;const vh=(sl.clientWidth-2*g)*9/16;sl.style.setProperty("--g",g+"px");sl.style.setProperty("--vt",vt+"px");cv.style.setProperty("--slh",Math.max(Math.round(vt+vh+30),520)+"px")}lay();addEventListener("resize",lay);addEventListener("load",lay);if(document.fonts)document.fonts.ready.then(lay);setTimeout(lay,600);setTimeout(lay,2000)})();</script></body>
+<script>/* keep the bio photo the same size when the full bio is expanded */(function(){const g=document.querySelector(".about .g"),im=g&&g.querySelector(".portrait.sq img"),d=g&&g.querySelector("details");if(!im)return;const set=()=>{if(!d||!d.open)g.style.setProperty("--ph",im.getBoundingClientRect().height+"px")};if(window.ResizeObserver)new ResizeObserver(set).observe(im);addEventListener("resize",set);addEventListener("load",set);set()})();</script><script>/* show #bethegood in the header once the footer is in view */(function(){const f=document.querySelector("footer");if(!f||!window.IntersectionObserver)return;new IntersectionObserver(e=>document.body.classList.toggle("foot",e[0].isIntersecting),{threshold:.2}).observe(f)})();</script><script>/* mobile: keep the follow pill off the landing screen */(function(){const c=document.querySelector(".cover");if(!c)return;const up=()=>document.body.classList.toggle("atcover",scrollY<c.offsetHeight-140);addEventListener("scroll",up,{passive:true});addEventListener("resize",up);up()})();</script><script>/* mobile: title on top, showreel in a 16:9 box underneath */(function(){const sl=document.querySelector(".s-reel"),cv=document.querySelector(".cover");if(!sl||!cv)return;const cap=sl.querySelector(".cap"),h=cap&&cap.querySelector("h2");if(!h)return;function lay(){if(innerWidth>860){cv.style.removeProperty("--slh");return}const sr=sl.getBoundingClientRect(),g=Math.max(16,Math.round(h.getBoundingClientRect().left-sr.left));/* video between name and details */const vh=(sl.clientWidth-2*g)*9/16;sl.style.setProperty("--g",g+"px");sl.style.setProperty("--vhh",Math.round(vh)+"px");const lns=h.querySelectorAll(".ln");const nb=lns.length?lns[lns.length-1].getBoundingClientRect().bottom-sr.top:cap.offsetTop;const vt=Math.round(nb+18);sl.style.setProperty("--vt",vt+"px");cv.style.setProperty("--slh",Math.max(Math.round(cap.offsetTop+cap.offsetHeight+28),520)+"px")}lay();addEventListener("resize",lay);addEventListener("load",lay);if(document.fonts)document.fonts.ready.then(lay);setTimeout(lay,600);setTimeout(lay,2000)})();</script><script>/* reel play/pause (phones) */(function(){
+const touch=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1)||matchMedia("(max-width:860px)").matches;
+const v=document.getElementById("coverVid");if(!touch||!v)return;const sl=v.closest(".slide"),snd=document.getElementById("snd"),pc=sl.querySelector(".pcover");
+const P='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg>',Z='<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4.5" width="4" height="15" rx="1"/><rect x="14" y="4.5" width="4" height="15" rx="1"/></svg>';
+const pp=document.createElement("button");pp.type="button";pp.className="vpp";pp.setAttribute("aria-label","Pause video");pp.innerHTML=Z;
+const big=document.createElement("div");big.className="vbig";big.innerHTML='<button type="button" aria-label="Play video">'+P+'</button>';
+const sp=document.createElement("div");sp.className="vspin";sp.setAttribute("aria-hidden","true");
+sl.append(pp,big,sp);let user=false,t=null;
+function place(){const sr=sl.getBoundingClientRect(),vr=v.getBoundingClientRect();const box={left:vr.left-sr.left,top:vr.top-sr.top,width:vr.width,height:vr.height};
+Object.assign(big.style,{left:box.left+"px",top:box.top+"px",width:box.width+"px",height:box.height+"px"});
+sp.style.left=(box.left+box.width/2-19)+"px";sp.style.top=(box.top+box.height/2-19)+"px";
+if(snd){const r=snd.getBoundingClientRect();pp.style.top=(r.top-sr.top+(r.height-34)/2)+"px";pp.style.left=(r.left-sr.left-34-8)+"px"}else{pp.style.top=(box.top+box.height-46)+"px";pp.style.left=(box.left+10)+"px"}}
+function ui(){const on=sl.classList.contains("on");pp.innerHTML=v.paused?P:Z;pp.setAttribute("aria-label",v.paused?"Play video":"Pause video");big.classList.toggle("show",on&&v.paused&&user)}
+const play=()=>{user=false;v.play().catch(()=>{});ui()};
+pp.addEventListener("click",e=>{e.stopPropagation();if(v.paused)play();else{user=true;v.pause()}});
+big.querySelector("button").addEventListener("click",e=>{e.stopPropagation();play()});
+v.addEventListener("play",ui);v.addEventListener("playing",()=>{clearTimeout(t);sp.classList.remove("show");ui()});
+v.addEventListener("pause",()=>{if(user&&pc)setTimeout(()=>pc.classList.add("off"),0);ui()});
+v.addEventListener("waiting",()=>{clearTimeout(t);t=setTimeout(()=>{if(!v.paused)sp.classList.add("show")},600)});
+/* autoplay blocked (e.g. Low Power Mode): show the play button */
+setTimeout(()=>{if(v.paused&&sl.classList.contains("on")&&v.currentTime<.1){user=true;ui()}},3500);
+place();ui();addEventListener("resize",place);addEventListener("load",place);if(document.fonts)document.fonts.ready.then(place);setTimeout(place,700);setTimeout(place,2100);
+new MutationObserver(ui).observe(sl,{attributes:true,attributeFilter:["class"]});
+})();</script></body>
 </html>
