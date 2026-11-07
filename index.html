@@ -1541,5 +1541,34 @@ let on=false;const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isInterse
 <script>/* honors reveal */(function(){const r=document.querySelector(".recog");if(!r)return;if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches){r.classList.add("go");return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>=.3)r.classList.add("go");else if(!e.isIntersecting)r.classList.remove("go")}),{threshold:[0,.3]});io.observe(r)})();</script>
 <script>/* recognition: replay each time it scrolls into view */(function(){const r=document.querySelector(".honors");if(!r)return;if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches){r.classList.add("go");return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>=.2)r.classList.add("go");else if(!e.isIntersecting)r.classList.remove("go")}),{threshold:[0,.2]});io.observe(r)})();</script>
 <script>/* "On camera" highlight: replay each time it scrolls into view */(function(){const t=document.querySelector(".tv-top");if(!t)return;if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches){t.classList.add("go");return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>=.4)t.classList.add("go");else if(!e.isIntersecting)t.classList.remove("go")}),{threshold:[0,.4]});io.observe(t)})();</script>
+<style>/* equal spacing above and below the recognition badges; portfolio divider sits right after */
+html body .honors{padding-top:38px!important;padding-bottom:40px!important}
+html body section.pf{padding-top:0!important}
+html body .pf .pfg::before{margin-bottom:clamp(22px,2.6vw,34px)!important}
+</style>
+<style>/* stats sit inside Listings: light hairline instead of the heavy section divider */
+html body .listings .stats{border-top:1px solid #ddd5c8!important}
+</style>
+<style>/* site-wide spacing pass: one rhythm, no big empty bands */
+:root{--sp:clamp(32px,3.6vw,48px)}
+html body .about{padding-top:var(--sp)!important;padding-bottom:var(--sp)!important}
+html body .about .g>div:last-child{justify-content:flex-start!important}
+html body .about .facts.wide{margin-top:30px!important;padding-top:22px!important}
+html body .about .work{margin-top:32px!important}
+html body .listings{padding-top:var(--sp)!important;padding-bottom:var(--sp)!important}
+html body .listings .stats{margin-top:30px!important}
+html body .tv-top{padding:24px 0 22px!important}
+html body .tv .vgrid{padding-top:22px!important;padding-bottom:30px!important}
+html body .talk{padding-top:22px!important}
+html body .tv .credit-row{margin-top:24px!important;padding-bottom:24px!important}
+html body .honors{padding-top:32px!important;padding-bottom:32px!important}
+html body section.pf{padding-top:0!important;padding-bottom:var(--sp)!important}
+html body .pf .pfg{row-gap:0!important}
+html body .pf .pfg::before{margin-bottom:26px!important}
+</style>
+<style>/* TV header on mid-size screens: heading on top, paragraph + logos beneath, no floating text */
+@media (max-width:1180px){html body .tv-top{grid-template-columns:1fr!important;align-items:start!important;gap:16px!important}html body .tv-side{grid-template-columns:minmax(0,1fr) auto!important;align-items:end!important}}
+@media (max-width:640px){html body .tv-side{grid-template-columns:1fr!important}}
+</style>
 </body>
 </html>
