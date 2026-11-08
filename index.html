@@ -1194,7 +1194,7 @@ body.atcover .dock{opacity:0;visibility:hidden}
     </div>
     <div class="talk" id="podcasts">
       <div class="pods-h"><span class="chip">Listen</span><span>Hosting · Guest spots · Shows she created &amp; produced</span></div>
-      <div class="tk-g"><a class="tk" href="https://podcasts.apple.com/us/podcast/rock-solid-with-crystal-fambrini/id1502774228" target="_blank" rel="noopener"><span class="art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/59/e3/32/59e3323f-7c80-fab5-c7d5-936ce8c87ebb/mza_1347288670414205896.jpg/600x600bf-60.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><i>▶</i></span><span class="role">Host &amp; Executive Producer</span><h3>Rock Solid with Crystal Fambrini</h3><p>Getting grounded, releasing expectations and manifesting the life you really want.</p><span class="go">Listen on Apple Podcasts ↗</span></a><a class="tk" href="https://podcasts.apple.com/us/podcast/episode-64-crystal-fambrini/id1665415995?i=1000691387832" target="_blank" rel="noopener"><span class="art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/36/f2/ce/36f2ced1-8cd7-1dac-0114-a11ab2e0b5bc/mza_8926199779071895723.jpg/600x600bf-60.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><i>▶</i></span><span class="role">Guest</span><h3>SDSU Journalism &amp; Media Studies, Ep. 64</h3><p>How she landed key media jobs, plus advice on presentation, persistence and staying organized.</p><span class="go">Listen on Apple Podcasts ↗</span></a><a class="tk" href="https://podcasts.apple.com/us/podcast/adulting-like-a-mother-father/id1486667929" target="_blank" rel="noopener"><span class="art"><img src="adulting-cover.jpg" alt="Adulting Like A Mother Father cover art" loading="lazy" onerror="this.remove()"><i>▶</i></span><span class="role">Executive Producer</span><h3>Adulting Like A Mother Father</h3><p>With Daniella Monet and Andrew Gardner: health, money, relationships and everyday adult life.</p><span class="go">Listen on Apple Podcasts ↗</span></a><a class="tk" href="https://podcasts.apple.com/us/podcast/getting-it-done-with-kai-greene/id1533203739" target="_blank" rel="noopener"><span class="art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts114/v4/26/02/d4/2602d46f-4690-f00a-2d78-3be93c5df457/mza_13079457593964965892.jpg/600x600bf-60.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><i>▶</i></span><span class="role">Executive Producer</span><h3>Getting It Done with Kai Greene</h3><p>Mindset, health and reaching personal goals with legendary bodybuilder Kai Greene.</p><span class="go">Listen on Apple Podcasts ↗</span></a></div>
+      <div class="tk-g"><a class="tk" href="https://podcasts.apple.com/us/podcast/rock-solid-with-crystal-fambrini/id1502774228" target="_blank" rel="noopener"><span class="art"><img src="rock-solid-cover.jpg" alt="" loading="lazy" onerror="this.remove()"><i>▶</i></span><span class="role">Host &amp; Executive Producer</span><h3>Rock Solid with Crystal Fambrini</h3><p>Getting grounded, releasing expectations and manifesting the life you really want.</p><span class="go">Listen on Apple Podcasts ↗</span></a><a class="tk" href="https://podcasts.apple.com/us/podcast/episode-64-crystal-fambrini/id1665415995?i=1000691387832" target="_blank" rel="noopener"><span class="art"><img src="sdsu-jms-cover.jpg" alt="" loading="lazy" onerror="this.remove()"><i>▶</i></span><span class="role">Guest</span><h3>SDSU Journalism &amp; Media Studies, Ep. 64</h3><p>How she landed key media jobs, plus advice on presentation, persistence and staying organized.</p><span class="go">Listen on Apple Podcasts ↗</span></a><a class="tk" href="https://podcasts.apple.com/us/podcast/adulting-like-a-mother-father/id1486667929" target="_blank" rel="noopener"><span class="art"><img src="adulting-cover.jpg" alt="Adulting Like A Mother Father cover art" loading="lazy" onerror="this.remove()"><i>▶</i></span><span class="role">Executive Producer</span><h3>Adulting Like A Mother Father</h3><p>With Daniella Monet and Andrew Gardner: health, money, relationships and everyday adult life.</p><span class="go">Listen on Apple Podcasts ↗</span></a><a class="tk" href="https://podcasts.apple.com/us/podcast/getting-it-done-with-kai-greene/id1533203739" target="_blank" rel="noopener"><span class="art"><img src="kai-greene-cover.jpg" alt="" loading="lazy" onerror="this.remove()"><i>▶</i></span><span class="role">Executive Producer</span><h3>Getting It Done with Kai Greene</h3><p>Mindset, health and reaching personal goals with legendary bodybuilder Kai Greene.</p><span class="go">Listen on Apple Podcasts ↗</span></a></div>
     </div>
     <div class="credit-row">
       <div class="cr"><span class="k">Host &amp; Executive Producer</span><b>America’s Next Investment</b><span class="n">CNBC · FOX Business</span></div>
@@ -1628,5 +1628,49 @@ html body .listings{padding-top:clamp(32px,3.4vw,44px)!important}
 img,video{-webkit-user-drag:none;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 </style>
 <script>/* image protection */(function(){const hit=t=>t&&t.closest&&t.closest("img,video,picture,svg image,.art,.fr,.slide,.portrait,.pf-strip figure,.track");document.addEventListener("contextmenu",e=>{if(hit(e.target))e.preventDefault()},true);document.addEventListener("dragstart",e=>{if(hit(e.target))e.preventDefault()},true)})();</script>
+<style>/* base44 bug fixes (Nov 8) */
+/* jump links land below the fixed 64px header even when smooth scroll is off (reduced motion) */
+main section[id],section[id]{scroll-margin-top:64px}
+/* same 48px gap at every section seam: Advisory -> Listings was 68px */
+html body .adv{padding-bottom:4px}
+/* "America's Next Investment" row sat 136px in from the page edge; align it to the grid */
+html body .credit-row{max-width:none;margin-left:0;margin-right:0}
+/* category rows: hover no longer re-flows the columns */
+.work a{position:relative;isolation:isolate}
+.work a::before{content:"";position:absolute;inset:0 -14px;background:var(--white);opacity:0;transition:opacity .3s;z-index:-1;pointer-events:none}
+html body .work a:hover{padding-inline:0;background:transparent}
+.work a:hover::before{opacity:1}
+/* phones: hide the Watch descriptor (Listen already does) so the chip row stays on one line */
+@media (max-width:860px){.pods-h>span:nth-child(2):not(.chip){display:none}}
+</style>
+<style>/* polish pass (Nov 8) */
+/* 1. no lone words: headings and short lines split evenly, paragraphs avoid one-word last lines */
+h1,h2,h3,.ser,.pull,.stat .c{text-wrap:balance}
+p{text-wrap:pretty}
+/* 2. Meet Crystal: shorter bio lines (heading and subhead keep the full column) */
+@media (min-width:901px){html body .about .bio{max-width:560px}}
+/* 3. Watch: gentle lift on hover, no dimming of the other cards */
+html body .vgrid .vc.big{transform:scale(1.04)}
+html body .vgrid.hov .vc,html body .tv .vgrid.hov .vc{opacity:1}
+html body .vgrid .vc.pre,html body .vgrid .vc.post{transform:translateZ(0)}
+/* 4. one arrow button everywhere: 44px circle, thin border, 16px arrow, orange on hover */
+html body .arr,html body .v-arw button,html body .tv .v-arw button,html body .wire .v-arw button{width:44px;height:44px;border:1px solid rgba(29,25,22,.35)!important;border-radius:50%;background:transparent;color:var(--ink);font-size:16px;display:grid;place-items:center;padding:0;transition:background .2s,border-color .2s,color .2s}
+html body .arr:hover,html body .v-arw button:hover,html body .tv .v-arw button:hover{background:var(--orange);border-color:var(--orange)!important;color:#fff}
+html body .cv-arrow{width:44px;height:44px;font-size:16px}
+/* 4. one play button everywhere: the soft white circle used on the videos */
+html body .tk .art i{width:50px;height:50px;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--ink);font-size:14px;padding-left:3px;box-sizing:border-box}
+@media (max-width:900px){html body .tk .art i{width:44px;height:44px}}
+/* Watch on a dark band */
+html body .tv .pods{position:relative;background:var(--black);box-shadow:0 0 0 100vmax var(--black);clip-path:inset(0 -100vmax);margin-top:0;padding-top:clamp(28px,3vw,40px)}
+html body .tv-top{border-bottom:0}
+html body .tv .pods .pods-h>span:nth-child(2){color:#cbb68f!important}
+html body .tv .pods .v-arw button{border-color:rgba(255,255,255,.35)!important;color:#fff}
+html body .tv .pods .v-arw button:hover{border-color:var(--orange)!important}
+html body .tv .vgrid .vc{border-color:transparent!important;box-shadow:0 10px 30px -14px rgba(0,0,0,.6)}
+html body .tv .vgrid{padding-bottom:clamp(36px,4vw,52px)!important}
+html body .tv .talk{border-top:0;padding-top:clamp(36px,4vw,52px)!important}
+/* Advisory: 2 x 2 on desktop so the four blocks even out */
+@media (min-width:1101px){html body .adv-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px clamp(48px,6vw,96px)}.adv-i p{max-width:58ch}}
+</style>
 </body>
 </html>
