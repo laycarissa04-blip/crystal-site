@@ -1101,7 +1101,7 @@ body.atcover .dock{opacity:0;visibility:hidden}
     <div class="g">
       <div class="portrait sq"><img src="crystal-bench.jpg" alt="Crystal Fambrini"><span class="chip">Crystal Fambrini</span></div>
       <div>
-        <h2 class="H">Meet Crystal <span class="ser">Real Estate • Media • Web3 • Longevity • Social Impact</span></h2>
+        <h2 class="H">Meet Crystal <span class="ser vlist"><span>Real Estate</span><span>Media</span><span>Web3</span><span>Longevity</span><span>Social Impact</span></span></h2>
         <p class="pull">Star clients include celebrities, CEOs and creatives who value an intimate first class experience.</p>
         <div class="bio">
         <p>In addition to real estate, Crystal is an established broadcaster and known talent herself. She is a well-known multi-EMMY Award-winning TV host and executive producer, Oscar-nominated documentarian and journalist, established signed commercial model and impactful do good entrepreneur raising millions for various philanthropic initiatives.</p>
@@ -1686,6 +1686,11 @@ html body .chip{clip-path:none!important}
 html body .honors .aw{opacity:1!important;transform:none!important;transition:none!important}
 html body .honors .badge .ic,html body .honors .laurel .lv ellipse{opacity:1!important;transform:none!important;transition:none!important}
 html body .honors .aw .mk{background-size:100% 100%!important;color:var(--paper)!important;transition:none!important}
+</style>
+<style>/* Meet Crystal subhead: bullets sit between words only, never left dangling at a line end */
+html body .about h2 .ser.vlist{display:flex!important;flex-wrap:wrap;overflow:hidden;margin-left:-1.27em;row-gap:.25em}
+.ser.vlist>span{white-space:nowrap;margin-right:-.12em}
+.ser.vlist>span::before{content:"•";display:inline-block;width:1.15em;padding-right:.12em;box-sizing:content-box;text-align:center;letter-spacing:0}
 </style>
 </body>
 </html>
