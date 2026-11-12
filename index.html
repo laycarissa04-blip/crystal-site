@@ -1842,13 +1842,15 @@ fit();addEventListener("resize",fit);addEventListener("load",fit)})();</script>
 html body .logo .sh{display:inline;color:inherit!important;margin:0!important;padding:0!important;letter-spacing:inherit!important;font:inherit!important}
 .logo.shine .sh{animation:hdrGlow 1.4s ease-in-out both;animation-delay:calc(var(--i) * 55ms)}
 @keyframes hdrGlow{0%,100%{text-shadow:none;filter:none}45%{text-shadow:0 0 .35em rgba(255,255,255,.75),0 0 .08em rgba(255,255,255,.9);filter:brightness(1.35)}}
+html body.lite .logo.shine .sh,html body.atcover .logo.shine .sh{animation-name:hdrGlowLite}
+@keyframes hdrGlowLite{0%,100%{opacity:1;text-shadow:none}45%{opacity:.38;text-shadow:0 0 .3em rgba(255,255,255,1)}}
 @media (prefers-reduced-motion:reduce){.logo.shine .sh{animation:none}}
 </style>
 <script>/* header name shine */(function(){const lg=document.querySelector(".logo");if(!lg||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
 const wrap=root=>{let i=0;const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();[...c.textContent].forEach(ch=>{if(/\s/.test(ch)){f.appendChild(document.createTextNode(ch));return}const s=document.createElement("span");s.className="sh";s.textContent=ch;s.style.setProperty("--i",i++);f.appendChild(s)});c.replaceWith(f)}else if(c.nodeType===1)walk(c)})};walk(root)};
 const nm=lg.querySelector(".lg-name"),tg=lg.querySelector(".tg-short");if(nm)wrap(nm);if(tg)wrap(tg);
 let busy=false;const run=()=>{if(busy)return;busy=true;lg.classList.remove("shine");void lg.offsetWidth;lg.classList.add("shine");setTimeout(()=>{lg.classList.remove("shine");busy=false},2400)};
-const start=()=>{setTimeout(run,600);setInterval(()=>{if(!document.hidden&&Date.now()-scrolling>600)run()},8000)};
+const start=()=>{setTimeout(run,600);setInterval(()=>{if(!document.hidden&&Date.now()-scrolling>300)run()},3800)};
 if(document.getElementById("loader"))document.addEventListener("loaderdone",start,{once:true});else start();
 lg.addEventListener("mouseenter",run);
 let foot=document.body.classList.contains("foot"),scrolling=0;addEventListener("scroll",()=>{scrolling=Date.now()},{passive:true});
@@ -1890,5 +1892,45 @@ const enter=new IntersectionObserver(es=>{let n=0;const vis=es.filter(e=>e.isInt
  vis.forEach(e=>{const t=e.target;const fromTop=e.boundingClientRect.top<innerHeight/2&&dir<0;t.classList.toggle("tx-dn",fromTop);t.style.setProperty("--d",Math.min(n++,5)*60+"ms");t.classList.add("tx-in")})},{rootMargin:"-6% 0px -6% 0px"});
 const leave=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)e.target.classList.remove("tx-in","tx-dn")}),{rootMargin:"0px"});
 els.forEach(e=>{enter.observe(e);leave.observe(e)});})();</script>
+<style>/* 11/11 motion pass 2: rows swell as they cross the middle of the screen, intro paragraphs write in word by word, photos settle from a soft zoom */
+html body .work{overflow-x:clip}
+html body .work a h3{transform-origin:left center;scale:calc(1 + var(--f,0) * .09);transition:scale .25s linear}
+html body .work a p,html body .work a .k{opacity:calc(.55 + var(--f,0) * .45);transition:opacity .25s linear}
+html body .work a .go{translate:calc(var(--f,0) * -6px) 0;transition:translate .25s linear}
+.tx-on .tw{display:inline-block}
+html body.tx-ready .tx-words.tx-in{animation:none!important;opacity:1!important}
+html body.tx-ready .tx-words:not(.tx-in) .tw{opacity:0}
+html body.tx-ready .tx-words.tx-in .tw{animation:twIn .7s cubic-bezier(.19,1,.22,1) both;animation-delay:calc(var(--d,0ms) + min(var(--w),40) * 22ms)}
+@keyframes twIn{from{opacity:0;translate:0 .45em;filter:blur(3px)}to{opacity:1;translate:0 0;filter:none}}
+html body.tx-ready .tx-b.tx-in :is(.ph,.art,figure,.portrait) img,html body.tx-ready .tx-b.tx-in>img,html body.tx-ready figure.tx-b.tx-in img{animation:imgSettle 1.6s cubic-bezier(.19,1,.22,1) both}
+@keyframes imgSettle{from{scale:1.1}to{scale:1}}
+@media (prefers-reduced-motion:reduce){html body .work a h3{scale:none!important}.tx-on .tw{opacity:1!important;animation:none!important}html body .tx-b img{animation:none!important}}
+</style>
+<script>/* motion pass 2 */(function(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+/* word-by-word paragraphs */
+const P=document.querySelectorAll(".adv-lead,.about .pull,.tv-side p,.listings .intro p,.pf-in p:not(.pf-sub)");
+P.forEach(p=>{let w=0;const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(t));return}const s=document.createElement("span");s.className="tw";s.textContent=t;s.style.setProperty("--w",w++);f.appendChild(s)});c.replaceWith(f)}else if(c.nodeType===1&&!c.classList.contains("kw"))walk(c);else if(c.nodeType===1){c.classList.add("tw");c.style.setProperty("--w",w++)}})};walk(p);p.classList.add("tx-words")});
+/* category rows swell near the middle of the screen */
+const rows=[...document.querySelectorAll(".work a")];if(!rows.length)return;let ticking=false;
+const upd=()=>{ticking=false;const c=innerHeight*.5;rows.forEach(r=>{const b=r.getBoundingClientRect();const d=Math.abs(b.top+b.height/2-c)/(innerHeight*.5);const f=Math.max(0,1-d*1.8);r.style.setProperty("--f",f.toFixed(3))})};
+addEventListener("scroll",()=>{if(!ticking){ticking=true;requestAnimationFrame(upd)}},{passive:true});addEventListener("resize",upd);upd();})();</script>
+<style>/* bio: typed in, with a soft caret and a natural rhythm */
+html body.tx-ready .tx-type{animation:none!important;opacity:1!important;translate:none!important}
+.tx-type .tc{visibility:hidden}
+.tx-type .tc.on{visibility:visible;animation:tcIn .18s ease-out both}
+@keyframes tcIn{from{opacity:0}to{opacity:1}}
+.tx-caret{display:inline-block;width:0;height:1.05em;margin:0 -1px -.15em 0;border-left:2px solid var(--orange);animation:caretBlink .9s steps(1) infinite}
+@keyframes caretBlink{50%{border-left-color:transparent}}
+@media (prefers-reduced-motion:reduce){.tx-type .tc{visibility:visible!important;animation:none!important}.tx-caret{display:none}}
+</style>
+<script>/* bio typewriter */(function(){if(matchMedia("(prefers-reduced-motion: reduce)").matches||!("IntersectionObserver" in window))return;
+const groups=[[...document.querySelectorAll(".about .bio > p")],[...document.querySelectorAll(".about .bio .more > p")]].filter(g=>g.length);
+const split=p=>{const out=[];const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();[...c.textContent].forEach(ch=>{const s=document.createElement("span");s.className="tc";s.textContent=ch;f.appendChild(s);out.push(s)});c.replaceWith(f)}else if(c.nodeType===1)walk(c)})};walk(p);p.classList.add("tx-type");return out};
+groups.forEach(ps=>{const chars=[];ps.forEach((p,k)=>{chars.push(...split(p));if(k<ps.length-1)chars.push(null)});let started=false;
+ const caret=document.createElement("span");caret.className="tx-caret";
+ const type=()=>{if(started)return;started=true;let i=0,last=performance.now(),wait=120;
+  const step=now=>{let budget=now-last;last=now;wait-=budget;while(wait<=0&&i<chars.length){const c=chars[i++];if(c===null){wait+=260;continue}c.classList.add("on");c.after(caret);const t=c.textContent;wait+=/[.!?]/.test(t)?150:/[,;:–—]/.test(t)?70:t===" "?(6+Math.random()*10):(4+Math.random()*9)}
+   if(i<chars.length)requestAnimationFrame(step);else setTimeout(()=>caret.remove(),1600)};requestAnimationFrame(step)};
+ const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){io.disconnect();type()}},{rootMargin:"0px 0px -15% 0px"});ps.forEach(p=>io.observe(p))});})();</script>
 </body>
 </html>
