@@ -1138,14 +1138,18 @@ body.atcover .dock{opacity:0;visibility:hidden}
     <div class="adv-top">
       <div class="kick"><span class="hl">Advisory</span></div>
       <h2 class="H">Strategic Advisory &amp; Business Growth</h2>
-      <p class="adv-sub">Blending creative vision with business acumen, Crystal operates at the intersection of media, technology, entrepreneurship, and influential relationships, connecting people, ideas, and opportunities to drive meaningful business growth.</p>
       <p class="adv-lead">A creative entrepreneur and strategic connector, Crystal Fambrini brings together vision, capital, talent, and opportunity to transform ambitious ideas into successful business ventures.</p>
     </div>
-    <div class="stats">
+    <div class="adv-mid">
+      <p class="adv-sub">Blending creative vision with business acumen, Crystal operates at the intersection of media, technology, entrepreneurship, and influential relationships, connecting people, ideas, and opportunities to drive meaningful business growth.</p>
+      <div class="adv-num"><div class="adv-lab">By the numbers</div>
+      <div class="stats">
       <div class="stat"><div class="n">$10M</div><div class="c">Media company valuation &amp; sale</div></div>
       <div class="stat"><div class="n">7 Figures</div><div class="c">Investment facilitated</div></div>
       <div class="stat"><div class="n">Apple</div><div class="c">Company acquired</div></div>
       <div class="stat"><div class="n">Media</div><div class="c">Podcast network launch</div></div>
+    </div>
+      </div>
     </div>
     <div class="adv-g">
       <div class="adv-i"><span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 27V21M11 27V17M17 27V19M23 27V12"/><path d="M4 15l7-6 6 4 10-9"/><path d="M21 4h6v6"/></svg></span><h3>Investment &amp; Growth</h3><p>Served as a strategic advisor to a media company, securing a key investor who helped accelerate its growth to a $10 million valuation and eventual sale. Additionally, introduced a key investor and helped facilitate a seven-figure investment in an entertainment startup.</p></div>
@@ -1697,13 +1701,20 @@ html body .about h2 .ser.vlist{display:block!important;overflow:hidden;padding:0
 <style>/* 11/11: modeling portfolio subhead */
 html body .pf .pf-in p.pf-sub{margin:0 0 10px!important;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#b8451a}
 </style>
-<style>/* 11/11: Advisory closing line moved under the heading as a smaller sub line */
-html body .adv .adv-sub{margin:18px 0 0;max-width:54ch;color:var(--muted);font-size:clamp(15px,1.15vw,17px);line-height:1.65}
-@media (min-width:1101px){html body .adv .adv-top .adv-sub{grid-column:1;grid-row:3;margin-top:22px}
-html body .adv .adv-top .adv-lead{grid-row:1/4}}
-@media (max-width:1100px){html body .adv .adv-top{display:flex;flex-direction:column;align-items:flex-start}
-html body .adv .adv-top .adv-lead{order:3}
-html body .adv .adv-top .adv-sub{order:4}}
+<style>/* 11/11: Advisory editorial spread: drop-cap paragraph left, column rule, "By the numbers" ruled 2x2 right */
+html body .adv .adv-mid{margin-top:clamp(36px,4vw,56px);padding-top:clamp(28px,3vw,40px);border-top:1px solid var(--line)}
+html body .adv .adv-sub{margin:0;color:var(--ink);font-size:clamp(19px,1.7vw,25px);line-height:1.55}
+html body .adv .adv-sub::first-letter{float:left;font-family:var(--head);font-size:4.3em;line-height:.8;color:var(--orange);margin:.07em .12em 0 0;text-transform:uppercase}
+html body .adv .adv-lab{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#b8451a;margin:0 0 14px}
+html body .adv .adv-mid .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:0;border-top:1px solid var(--line)}
+html body .adv .adv-mid .stat{margin:0!important;padding:clamp(16px,1.6vw,22px) clamp(16px,1.8vw,26px) clamp(18px,1.8vw,24px) 0;border:0;border-bottom:1px solid var(--line);background:none}
+html body .adv .adv-mid .stat:nth-child(2n){padding-left:clamp(16px,1.8vw,26px);border-left:1px solid var(--line)}
+html body .adv .adv-mid .stat .n{font-size:clamp(36px,3.5vw,56px)}
+html body .adv .adv-mid .stat .c{margin-top:6px}
+html body .adv .adv-num{margin-top:32px}
+@media (min-width:1101px){html body .adv .adv-mid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start}
+html body .adv .adv-sub{padding-right:clamp(32px,4vw,64px)}
+html body .adv .adv-num{margin:0;padding-left:clamp(32px,4vw,64px);border-left:1px solid var(--line);align-self:stretch}}
 </style>
 <style>/* 11/11: footer name animation — letters rise in, then a light ripple runs through FAMBRINI; hover makes letters hop */
 footer .big .nw{display:inline-block;white-space:nowrap;clip-path:inset(-0.2em -0.1em 0 -0.1em);vertical-align:top}
