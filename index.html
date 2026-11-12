@@ -1888,6 +1888,9 @@ html body .adv .adv-sub .btc::before,html body .adv .adv-sub .btc::after{content
 html body .adv .adv-sub .btc::before{top:-.1em}
 html body .adv .adv-sub .btc::after{bottom:-.1em}
 html body .adv .adv-sub .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* Advisory buzzwords: rise in burnt orange, hold a beat, then ease into the ink of the paragraph */
+html body.tx-ready .adv .tx-in .kw{animation:kwOrange 2.2s cubic-bezier(.19,1,.22,1) both!important;animation-delay:calc(.35s + var(--i,0) * .14s)!important}
+@keyframes kwOrange{0%{opacity:0;translate:0 .3em;color:var(--orange)}18%{opacity:1;translate:0 0;color:var(--orange)}55%{color:var(--orange)}100%{opacity:1;translate:0 0;color:inherit}}
 </style>
 <style>/* 11/11: footer name animation — letters rise in, then a light ripple runs through FAMBRINI; hover makes letters hop */
 footer .big .nw{display:inline-block;white-space:nowrap;clip-path:inset(-0.2em -0.1em 0 -0.1em);vertical-align:top}
@@ -1941,7 +1944,7 @@ html body.tx-ready .tx-h.tx-in .tx-wi{animation:txWord 1s cubic-bezier(.19,1,.22
 html body.tx-ready .tx-h.tx-in.tx-dn .tx-wi{animation-name:txWordDn}
 html body.tx-ready .tx-h:not(.tx-in) .tx-u,html body.tx-ready .tx-b:not(.tx-in){opacity:0!important}
 html body.tx-ready .tx-h.tx-in .tx-u{animation:txUp .9s cubic-bezier(.19,1,.22,1) both;animation-delay:calc(var(--d,0ms) + var(--k,0) * 70ms)}
-html body.tx-ready .tx-b.tx-in{animation:txUp .8s cubic-bezier(.19,1,.22,1) both;animation-delay:var(--d,0ms)}
+html body.tx-ready .tx-b.tx-in{animation:txUp .8s cubic-bezier(.19,1,.22,1) both;animation-delay:calc(var(--seq,0ms) + var(--d,0ms))}
 html body.tx-ready .tx-b.tx-in.tx-dn,html body.tx-ready .tx-h.tx-in.tx-dn .tx-u{animation-name:txDn}
 @keyframes txWord{from{translate:0 112%}to{translate:0 0}}
 @keyframes txWordDn{from{translate:0 -112%}to{translate:0 0}}
@@ -1977,7 +1980,7 @@ html body .work a .go{translate:calc(var(--f,0) * -6px) 0;transition:translate .
 .tx-on .tw{display:inline-block}
 html body.tx-ready .tx-words.tx-in{animation:none!important;opacity:1!important}
 html body.tx-ready .tx-words:not(.tx-in) .tw{opacity:0}
-html body.tx-ready .tx-words.tx-in .tw{animation:twIn .7s cubic-bezier(.19,1,.22,1) both;animation-delay:calc(var(--d,0ms) + min(var(--w),40) * 22ms)}
+html body.tx-ready .tx-words.tx-in .tw{animation:twIn .7s cubic-bezier(.19,1,.22,1) both;animation-delay:calc(var(--seq,0ms) + var(--d,0ms) + min(var(--w),140) * var(--wstep,22ms))}
 @keyframes twIn{from{opacity:0;translate:0 .45em;filter:blur(3px)}to{opacity:1;translate:0 0;filter:none}}
 html body.tx-ready .tx-b.tx-in :is(.ph,.art,figure,.portrait) img,html body.tx-ready .tx-b.tx-in>img,html body.tx-ready figure.tx-b.tx-in img{animation:imgSettle 1.6s cubic-bezier(.19,1,.22,1) both}
 @keyframes imgSettle{from{scale:1.1}to{scale:1}}
@@ -2043,5 +2046,12 @@ html body .about .bio details[open]>p{animation:none!important}
 d.querySelectorAll(":scope>p").forEach(p=>{const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(t));return}const s=document.createElement("span");s.className="tw2";s.textContent=t;s.style.setProperty("--w",w++);f.appendChild(s)});c.replaceWith(f)}else if(c.nodeType===1)walk(c)})};walk(p)});
 d.addEventListener("toggle",()=>{d.classList.remove("bio-go");if(d.open){void d.offsetWidth;d.classList.add("bio-go")}})})();</script>
 
+<script>/* About: one reading order — heading types, then the quote, then each bio paragraph word by word, then the link */(function(){const col=document.querySelector(".about .bio");if(!col)return;const pull=document.querySelector(".about .pull");const ps=[...col.querySelectorAll(":scope > p")];const sum=col.querySelector("summary");
+let t=1100;const set=(e,ms)=>{if(e)e.style.setProperty("--seq",Math.round(ms)+"ms")};
+if(pull){set(pull,t);pull.style.setProperty("--wstep","30ms");t+=pull.querySelectorAll(".tw").length*30+250}
+ps.forEach(p=>{set(p,t);p.style.setProperty("--wstep","14ms");t+=p.querySelectorAll(".tw").length*14+250});
+const more=col.querySelector(".more");set(more,t);set(sum,t);
+if(sum&&ps[0]&&!matchMedia("(prefers-reduced-motion: reduce)").matches){col.classList.add("sq-wait");new MutationObserver(()=>col.classList.toggle("sq-go",ps[0].classList.contains("tx-in"))).observe(ps[0],{attributes:true,attributeFilter:["class"]})}})();</script>
+<style>.about .bio.sq-wait:not(.sq-go)>.more>summary{opacity:0}.about .bio.sq-go>.more>summary{animation:txUp .8s cubic-bezier(.19,1,.22,1) both;animation-delay:var(--seq,0ms)}</style>
 </body>
 </html>
