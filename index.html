@@ -1814,6 +1814,13 @@ html body footer .motto{color:#a9a49c!important}
 html body footer h4,html body footer h4 a{color:#ffffff!important;opacity:.9}
 html body footer .socialbar .t{color:#a9a49c!important}
 html body .credit a{border-bottom-color:#a9a49c!important}
+/* section labels: editorial marker instead of a flat orange box — an orange rule draws in, then the label in spaced small caps */
+html body .kick .hl,html body .pods-h .chip,html body .talk .pods-h .chip{background:none!important;background-image:none!important;color:var(--ink)!important;padding:0 0 0 46px!important;position:relative;display:inline-block;font-weight:700;letter-spacing:.28em}
+html body .kick .hl::before,html body .pods-h .chip::before{content:"";position:absolute;left:0;top:50%;width:34px;height:2px;background:var(--orange);transform-origin:left center;transform:scaleX(0);transition:transform .9s cubic-bezier(.19,1,.22,1) .15s}
+html body .kick .hl.lb-on::before,html body .pods-h .chip.lb-on::before{transform:scaleX(1)}
+html body .tv .pods .pods-h .chip{color:#fff!important}
+html body .tv .pods .pods-h .chip::before{background:var(--champagne)}
+@media (prefers-reduced-motion:reduce){html body .kick .hl::before,html body .pods-h .chip::before{transform:none}}
 </style>
 <style>/* 11/11: footer name animation — letters rise in, then a light ripple runs through FAMBRINI; hover makes letters hop */
 footer .big .nw{display:inline-block;white-space:nowrap;clip-path:inset(-0.2em -0.1em 0 -0.1em);vertical-align:top}
@@ -1932,5 +1939,7 @@ groups.forEach(ps=>{const chars=[];ps.forEach((p,k)=>{chars.push(...split(p));if
   const step=now=>{let budget=now-last;last=now;wait-=budget;while(wait<=0&&i<chars.length){const c=chars[i++];if(c===null){wait+=260;continue}c.classList.add("on");c.after(caret);const t=c.textContent;wait+=/[.!?]/.test(t)?150:/[,;:–—]/.test(t)?70:t===" "?(6+Math.random()*10):(4+Math.random()*9)}
    if(i<chars.length)requestAnimationFrame(step);else setTimeout(()=>caret.remove(),1600)};requestAnimationFrame(step)};
  const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){io.disconnect();type()}},{rootMargin:"0px 0px -15% 0px"});ps.forEach(p=>io.observe(p))});})();</script>
+<script>/* section label rule draws in each time it enters */(function(){const L=document.querySelectorAll(".kick .hl,.pods-h .chip");if(!("IntersectionObserver" in window)){L.forEach(l=>l.classList.add("lb-on"));return}
+const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle("lb-on",e.isIntersecting)),{rootMargin:"-8% 0px -8% 0px"});L.forEach(l=>io.observe(l))})();</script>
 </body>
 </html>
