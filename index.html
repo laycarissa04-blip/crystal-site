@@ -1838,6 +1838,26 @@ html body .pc:hover .chip::after,html body .vc:hover .chip::after{animation:chip
 @keyframes chipShine{to{left:130%}}
 html body .pc .chip.dt-sm,html body .vc .chip.dt-sm{transition:letter-spacing 1.1s cubic-bezier(.19,1,.22,1),opacity .8s ease,box-shadow .7s cubic-bezier(.19,1,.22,1) .2s}
 html body .pc .chip.dt-sm:not(.dt-on),html body .vc .chip.dt-sm:not(.dt-on){box-shadow:inset 0 0 0 var(--orange)}
+html body .s-reel .bgvid{background:transparent!important}
+/* Advisory: label sits the same distance under its rule as Listings */
+html body .adv .adv-top{padding-top:28px!important}
+/* follow rail: editorial redesign — no white pill or black circles; a hairline rail with a vertical "Follow" label and plain ink icons that turn burnt orange */
+html body .dock.pill{background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important;border-radius:0!important}
+html body .dock a,html body .dock a.thr{width:30px!important;height:30px!important;border-radius:0!important;background:transparent!important;color:var(--ink)!important;transition:color .25s,transform .3s cubic-bezier(.2,.9,.25,1.3)!important}
+html body .dock a:hover{background:transparent!important;color:var(--orange)!important;transform:scale(1.18)!important}
+html body .dock svg{width:17px!important;height:17px!important}
+html body.dock-side .dock{gap:4px!important;padding:0!important}
+html body.dock-side .dock .dl{display:block!important;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9.5px;letter-spacing:.32em;font-weight:700;color:#6f6a64;padding:0 0 10px!important;margin:0 auto}
+html body.dock-side .dock::before,html body.dock-side .dock::after{content:"";display:block;width:1px;height:46px;background:#cfc9c0;margin:0 auto}
+html body.dock-side .dock::before{order:-2}
+html body.dock-side .dock .dl{order:-1}
+html body.dock-side .dock .dsep{width:12px!important;height:1px!important;margin:4px auto!important;background:#cfc9c0!important}
+/* on the dark Watch band and footer the icons flip to light */
+html body.dock-dark .dock a,html body.dock-dark .dock .dl{color:#e9e4dc!important}
+html body.dock-dark .dock::before,html body.dock-dark .dock::after,html body.dock-dark .dock .dsep{background:rgba(255,255,255,.25)!important}
+/* bottom bar on smaller screens: slim cream strip with hairline border */
+html body:not(.dock-side) .dock.pill{background:rgba(246,244,240,.94)!important;backdrop-filter:blur(10px)!important;border:1px solid #ddd8cf;padding:4px 10px!important;gap:6px!important}
+html body .about .g>.portrait{align-self:start}
 </style>
 <style>/* 11/11: footer name animation — letters rise in, then a light ripple runs through FAMBRINI; hover makes letters hop */
 footer .big .nw{display:inline-block;white-space:nowrap;clip-path:inset(-0.2em -0.1em 0 -0.1em);vertical-align:top}
@@ -1879,6 +1899,9 @@ if(document.getElementById("loader"))document.addEventListener("loaderdone",star
 lg.addEventListener("mouseenter",run);
 let foot=document.body.classList.contains("foot"),scrolling=0;addEventListener("scroll",()=>{scrolling=Date.now()},{passive:true});
 new MutationObserver(()=>{const f=document.body.classList.contains("foot");if(f!==foot){foot=f;const go=()=>{if(Date.now()-scrolling<250)return setTimeout(go,250);run()};setTimeout(go,400)}}).observe(document.body,{attributes:true,attributeFilter:["class"]});})();</script>
+<script>/* follow rail flips to light over dark bands */(function(){const d=document.querySelector(".dock");if(!d)return;const darks=[...document.querySelectorAll(".tv .pods,footer,.cover")];let t=false;
+const upd=()=>{t=false;const r=d.getBoundingClientRect(),y=r.top+r.height/2;document.body.classList.toggle("dock-dark",darks.some(e=>{const b=e.getBoundingClientRect();return b.top<y&&b.bottom>y}))};
+addEventListener("scroll",()=>{if(!t){t=true;requestAnimationFrame(upd)}},{passive:true});addEventListener("resize",upd);upd()})();</script>
 <style>/* 11/11: scroll reveal for the whole page — every block glides in as it enters, from below when scrolling down and from above when scrolling up, and replays each time; headings rise word by word out of a mask. Uses the separate `translate` property + keyframes so hover effects (transform/transitions) are untouched. */
 .rv{opacity:1!important;transform:none!important;transition:none!important}
 .tx-on .tx-w{display:inline-block;clip-path:inset(-.3em -.12em -.04em -.12em);vertical-align:top}
@@ -1905,7 +1928,7 @@ heads.forEach(h=>{h.classList.add("tx-h");let k=0;
  [...h.childNodes].forEach(n=>{if(n.nodeType===3){const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){f.appendChild(document.createTextNode(" "));return}const m=document.createElement("span");m.className="tx-w";const i=document.createElement("span");i.className="tx-wi";i.textContent=w;i.style.setProperty("--k",k++);m.appendChild(i);f.appendChild(m)});n.replaceWith(f)}else if(n.nodeType===1){n.classList.add("tx-u");n.style.setProperty("--k",k++)}})});
 /* blocks: text, images, cards, buttons — outermost match only */
 const SEL="main section:not(.cover) :is(p,h3,dt,dd,.kick,.adv-lab,.btn,.ctrl,.pf-ctrl,.stats,figure,img,video,picture,.pc,.tk,.aw,.work>a,.adv-i .ic,.vgrid,.facts>div,.credit-row,.more), footer .wrap>*:not(.big)";
-const all=[...document.querySelectorAll(SEL)].filter(e=>!out(e)&&!e.closest(".H"));
+const all=[...document.querySelectorAll(SEL)].filter(e=>!out(e)&&!e.closest(".H")&&!e.closest("details"));
 const set=new Set(all);const blocks=all.filter(e=>{let p=e.parentElement;while(p){if(set.has(p))return false;p=p.parentElement}return true});
 blocks.forEach(e=>e.classList.add("tx-b"));
 const els=heads.concat(blocks);
@@ -1932,7 +1955,7 @@ html body.tx-ready .tx-b.tx-in :is(.ph,.art,figure,.portrait) img,html body.tx-r
 </style>
 <script>/* motion pass 2 */(function(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
 /* word-by-word paragraphs */
-const P=document.querySelectorAll(".about .bio > p,.about .bio .more > p,.adv-lead,.about .pull,.tv-side p,.listings .intro p,.pf-in p:not(.pf-sub)");
+const P=document.querySelectorAll(".about .bio > p,.adv-lead,.about .pull,.tv-side p,.listings .intro p,.pf-in p:not(.pf-sub)");
 P.forEach(p=>{let w=0;const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(t));return}const s=document.createElement("span");s.className="tw";s.textContent=t;s.style.setProperty("--w",w++);f.appendChild(s)});c.replaceWith(f)}else if(c.nodeType===1&&!c.classList.contains("kw"))walk(c);else if(c.nodeType===1){c.classList.add("tw");c.style.setProperty("--w",w++)}})};walk(p);p.classList.add("tx-words")});
 /* category rows swell near the middle of the screen */
 const rows=[...document.querySelectorAll(".work a")];if(!rows.length)return;let ticking=false;
@@ -1965,5 +1988,19 @@ const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle("l
 const L=document.querySelectorAll(".pf-sub,.adv-lab,.facts dt,.work .k,.tv .seen>span:first-child,.honors .cat,.tk .role,.pods-h>span:nth-child(2),.vc .chip,.pc .chip,.pf-strip figcaption");
 L.forEach(e=>{e.classList.add("dt-sm")});
 const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle("dt-on",e.isIntersecting)),{rootMargin:"-6% 0px -6% 0px"});L.forEach(e=>io.observe(e))})();</script>
+<style>/* full bio: fades in when opened (works on iOS — no scroll observer needed) */
+.about .bio details[open]>p{animation:bioIn .8s cubic-bezier(.19,1,.22,1) both}
+.about .bio details[open]>p:nth-of-type(2){animation-delay:.08s}.about .bio details[open]>p:nth-of-type(3){animation-delay:.16s}.about .bio details[open]>p:nth-of-type(n+4){animation-delay:.24s}
+@keyframes bioIn{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+/* landing reel: the black around the video is filled by a soft, blurred live copy of the reel */
+.s-reel .ambi{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(36px) saturate(1.15) brightness(.62);transform:scale(1.25);z-index:0;pointer-events:none;opacity:0;transition:opacity .8s ease}
+.s-reel .ambi.on{opacity:1}
+.cover{overflow:hidden}
+</style>
+<script>/* landing reel ambient blur */(function(){const sl=document.querySelector(".s-reel"),v=document.getElementById("coverVid");if(!sl||!v)return;
+const c=document.createElement("canvas");c.className="ambi";c.width=64;c.height=36;c.setAttribute("aria-hidden","true");sl.insertBefore(c,sl.firstChild);const g=c.getContext("2d");
+const poster=sl.querySelector(".pcover");let vis=true,last=0;
+const draw=t=>{requestAnimationFrame(draw);if(!vis||document.hidden||t-last<90)return;last=t;try{if(v.readyState>=2){g.drawImage(v,0,0,64,36);c.classList.add("on")}else if(poster&&poster.complete&&poster.naturalWidth){g.drawImage(poster,0,0,64,36);c.classList.add("on")}}catch(e){}};
+if("IntersectionObserver" in window)new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(sl);requestAnimationFrame(draw)})();</script>
 </body>
 </html>
