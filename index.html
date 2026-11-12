@@ -1864,6 +1864,19 @@ html body .pf .pf-in .kick{margin:0 0 4px}
 html body .chip:not(.pods-h .chip){box-shadow:inset 4px 0 0 var(--orange);padding-left:14px!important}
 html body .slide .chip{background:var(--cream)!important;color:#161616!important}
 @media (min-width:901px){html body .about .g>.portrait{position:sticky;top:96px}}
+/* landing name + roles: fashion-masthead type instead of heavy condensed caps and a boxed banner */
+html body .s-reel h2,html body .s-reel h2 .ln,html body .s-reel h2 .ln>span{text-shadow:none!important}
+html body .s-reel h2{font-family:var(--body)!important;font-weight:400!important;font-size:clamp(40px,5.4vw,86px)!important;letter-spacing:.07em!important;line-height:1.02!important}
+html body .s-reel h2 .ln{color:#fbfaf7;letter-spacing:.07em;line-height:1.04!important}
+html body .s-reel h2 .ser{background:none!important;border:0!important;padding:0!important;font-family:var(--body)!important;font-weight:500!important;font-size:max(11px,.15em)!important;letter-spacing:.32em!important;color:rgba(251,250,247,.86)!important;backdrop-filter:none!important}
+html body .s-reel h2 .ser .w::before{content:none!important}
+html body .s-reel h2 .ser .w{margin:0!important;padding:0!important}
+html body .s-reel h2 .ser .w+.w::before{content:"·"!important;display:inline-block;background:none!important;width:auto!important;height:auto!important;margin:0 .9em!important;color:var(--orange);position:static!important;transform:none!important;opacity:1!important}
+html body .s-reel .cap .btn.w{margin-top:28px}
+html body .s-reel .shade{background:linear-gradient(90deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.3) 40%,rgba(10,10,10,0) 70%),linear-gradient(0deg,rgba(10,10,10,.4) 0%,rgba(10,10,10,0) 45%)!important;opacity:1!important}
+@media (min-width:861px){html body .s-reel h2 .ser{margin-top:1.1em!important}}
+html body .s-reel h2 .ser .w+.w::before{font-size:1.9em!important;line-height:0!important;vertical-align:-.12em;font-weight:700}
+@media (max-width:860px){html body .s-reel h2 .ser{display:flex!important;flex-wrap:wrap;gap:9px 20px}html body .s-reel h2 .ser .w+.w::before{content:none!important}html body .s-reel h2 .ser .w{display:inline-flex!important;align-items:center;gap:8px}html body .s-reel h2 .ser .w::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--orange);order:-1;position:static!important;display:block!important;animation:none!important;opacity:1!important}}
 </style>
 <style>/* 11/11: footer name animation — letters rise in, then a light ripple runs through FAMBRINI; hover makes letters hop */
 footer .big .nw{display:inline-block;white-space:nowrap;clip-path:inset(-0.2em -0.1em 0 -0.1em);vertical-align:top}
@@ -2018,5 +2031,6 @@ html body .about .bio details[open]>p{animation:none!important}
 <script>/* full bio word reveal on open */(function(){const d=document.querySelector(".about .bio .more");if(!d||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let w=0;
 d.querySelectorAll(":scope>p").forEach(p=>{const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(t));return}const s=document.createElement("span");s.className="tw2";s.textContent=t;s.style.setProperty("--w",w++);f.appendChild(s)});c.replaceWith(f)}else if(c.nodeType===1)walk(c)})};walk(p)});
 d.addEventListener("toggle",()=>{d.classList.remove("bio-go");if(d.open){void d.offsetWidth;d.classList.add("bio-go")}})})();</script>
+
 </body>
 </html>
