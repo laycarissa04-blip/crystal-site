@@ -1141,7 +1141,7 @@ body.atcover .dock{opacity:0;visibility:hidden}
       <p class="adv-lead">A creative entrepreneur and strategic connector, Crystal Fambrini brings together <span class="kw" style="--i:0">vision</span>, <span class="kw" style="--i:1">capital</span>, <span class="kw" style="--i:2">talent</span>, and <span class="kw" style="--i:3">opportunity</span> to transform <span class="kw" style="--i:4">ambitious</span> <span class="kw" style="--i:5">ideas</span> into successful business ventures.</p>
     </div>
     <div class="adv-mid">
-      <p class="adv-sub">Blending creative vision with business acumen, Crystal operates at the intersection of <span class="kw" style="--i:0">media</span>, <span class="kw" style="--i:1">technology</span>, <span class="kw" style="--i:2">entrepreneurship</span>, and <span class="kw" style="--i:3">influential</span> <span class="kw" style="--i:4">relationships</span>, connecting people, ideas, and opportunities to drive <span class="kw" style="--i:5">meaningful</span> <span class="kw" style="--i:6">business</span> <span class="kw" style="--i:7">growth</span>.</p>
+      <p class="adv-sub"><span class="btc" aria-hidden="true">B</span><span class="vh">B</span>lending creative vision with business acumen, Crystal operates at the intersection of <span class="kw" style="--i:0">media</span>, <span class="kw" style="--i:1">technology</span>, <span class="kw" style="--i:2">entrepreneurship</span>, and <span class="kw" style="--i:3">influential</span> <span class="kw" style="--i:4">relationships</span>, connecting people, ideas, and opportunities to drive <span class="kw" style="--i:5">meaningful</span> <span class="kw" style="--i:6">business</span> <span class="kw" style="--i:7">growth</span>.</p>
       <div class="adv-num"><div class="adv-lab">By the numbers</div>
       <div class="stats">
       <div class="stat"><div class="n">$10M</div><div class="c">Media company valuation &amp; sale</div></div>
@@ -1219,7 +1219,7 @@ body.atcover .dock{opacity:0;visibility:hidden}
       <div class="kick"><span class="hl">Portfolio</span></div>
       <h2 class="H">Modeling Portfolio</h2>
       <p class="pf-sub">Commercial • Editorial • Lifestyle</p>
-      <p>Represented by Brand Models for 20 years, with experience spanning commercial campaigns, editorial, beauty, and lifestyle modeling.</p>
+      <p>Represented by Brand Models for 20 years with experience spanning commercial campaigns, editorial, beauty, and lifestyle modeling.</p>
       <div class="pf-ctrl"><button class="arr" id="pfPrev" type="button" aria-label="Scroll portfolio left">←</button><button class="arr" id="pfNext" type="button" aria-label="Scroll portfolio right">→</button></div>
       <a class="btn" href="https://www.brandtalent.net/3440/crystalfambrini" target="_blank" rel="noopener">View on Brand Models ↗</a>
     </div>
@@ -1881,6 +1881,13 @@ html body .s-reel h2 .ser .w+.w::before{font-size:1.9em!important;line-height:0!
 html body .s-reel h2{font-family:var(--head)!important;font-weight:400!important;font-size:clamp(54px,6.4vw,104px)!important;letter-spacing:.005em!important;line-height:.94!important}
 html body .s-reel h2 .ln{letter-spacing:.005em!important;line-height:.94!important;color:#f7f5f1}
 html body .s-reel h2 .ser{font-family:var(--body)!important}
+/* drop cap as a Bitcoin "B": the display B with the two short strokes through top and bottom */
+html body .adv .adv-sub::first-letter{float:none!important;text-transform:none!important;font:inherit!important;color:inherit!important;margin:0!important;line-height:inherit!important}
+html body .adv .adv-sub .btc{float:left;position:relative;font-family:var(--head);font-size:4.3em;line-height:.8;color:var(--orange);margin:.07em .14em 0 0;padding:0 .02em}
+html body .adv .adv-sub .btc::before,html body .adv .adv-sub .btc::after{content:"";position:absolute;left:24%;width:44%;height:.13em;background:linear-gradient(90deg,var(--orange) 0 22%,transparent 22% 70%,var(--orange) 70% 92%,transparent 92%)}
+html body .adv .adv-sub .btc::before{top:-.1em}
+html body .adv .adv-sub .btc::after{bottom:-.1em}
+html body .adv .adv-sub .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 </style>
 <style>/* 11/11: footer name animation — letters rise in, then a light ripple runs through FAMBRINI; hover makes letters hop */
 footer .big .nw{display:inline-block;white-space:nowrap;clip-path:inset(-0.2em -0.1em 0 -0.1em);vertical-align:top}
