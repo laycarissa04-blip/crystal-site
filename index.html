@@ -1138,6 +1138,7 @@ body.atcover .dock{opacity:0;visibility:hidden}
     <div class="adv-top">
       <div class="kick"><span class="hl">Advisory</span></div>
       <h2 class="H">Strategic Advisory &amp; Business Growth</h2>
+      <p class="adv-sub">Blending creative vision with business acumen, Crystal operates at the intersection of media, technology, entrepreneurship, and influential relationships, connecting people, ideas, and opportunities to drive meaningful business growth.</p>
       <p class="adv-lead">A creative entrepreneur and strategic connector, Crystal Fambrini brings together vision, capital, talent, and opportunity to transform ambitious ideas into successful business ventures.</p>
     </div>
     <div class="stats">
@@ -1151,10 +1152,6 @@ body.atcover .dock{opacity:0;visibility:hidden}
       <div class="adv-i"><span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="16" height="16" rx="2"/><rect x="12.5" y="12.5" width="7" height="7" rx="1"/><path d="M12 4v4M16 4v4M20 4v4M12 24v4M16 24v4M20 24v4M4 12h4M4 16h4M4 20h4M24 12h4M24 16h4M24 20h4"/></svg></span><h3>Technology &amp; Innovation</h3><p>Consulted for a celebrity-owned technology company that was subsequently acquired by Apple.</p></div>
       <div class="adv-i"><span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="11" y="3" width="10" height="17" rx="5"/><path d="M7 15a9 9 0 0 0 18 0M16 24v5M11 29h10"/></svg></span><h3>Media Entrepreneurship</h3><p>Launched and led a podcast network in partnership with a legendary American broadcasting entrepreneur.</p></div>
       <div class="adv-i"><span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="10" r="4"/><circle cx="7" cy="13" r="3"/><circle cx="25" cy="13" r="3"/><path d="M9 27v-2a7 7 0 0 1 14 0v2M2 26v-1a5 5 0 0 1 6.5-4.8M30 26v-1a5 5 0 0 0-6.5-4.8"/></svg></span><h3>Executive Advisory &amp; Positioning</h3><p>Advised and developed business leaders for global stages, broadcast appearances, and strategic personal branding, elevating their visibility, influence, and positioning for high-value business opportunities and deals.</p></div>
-    </div>
-    <div class="adv-end">
-      <p class="adv-close">Blending creative vision with business acumen, Crystal operates at the intersection of media, technology, entrepreneurship, and influential relationships, connecting people, ideas, and opportunities to drive meaningful business growth.</p>
-      <button type="button" class="btn w" data-contact>Work with Crystal →</button>
     </div>
   </div>
 </section>
@@ -1700,11 +1697,13 @@ html body .about h2 .ser.vlist{display:block!important;overflow:hidden;padding:0
 <style>/* 11/11: modeling portfolio subhead */
 html body .pf .pf-in p.pf-sub{margin:0 0 10px!important;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#b8451a}
 </style>
-<style>/* 11/11: Advisory closing row mirrors the intro (same type, bar and column) with a contact button filling the left */
-html body .adv .adv-end{margin-top:44px;background:var(--black);color:var(--white);padding:clamp(28px,3.4vw,48px) clamp(24px,3.4vw,52px);display:flex;align-items:center;justify-content:space-between;gap:28px clamp(32px,5vw,88px);flex-wrap:wrap}
-html body .adv .adv-close{flex:1 1 520px;margin:0;padding:0 0 0 16px;border-top:0;border-left:5px solid var(--orange);background:none;color:inherit;font-size:clamp(18px,1.6vw,23px);line-height:1.5;max-width:58ch}
-html body .adv .adv-end .btn{flex:0 0 auto;margin:0;align-self:center}
-html body .adv .adv-end .btn.w:hover{background:var(--orange);color:var(--white);border-color:var(--orange)}
+<style>/* 11/11: Advisory closing line moved under the heading as a smaller sub line */
+html body .adv .adv-sub{margin:18px 0 0;max-width:54ch;color:var(--muted);font-size:clamp(15px,1.15vw,17px);line-height:1.65}
+@media (min-width:1101px){html body .adv .adv-top .adv-sub{grid-column:1;grid-row:3;margin-top:22px}
+html body .adv .adv-top .adv-lead{grid-row:1/4}}
+@media (max-width:1100px){html body .adv .adv-top{display:flex;flex-direction:column;align-items:flex-start}
+html body .adv .adv-top .adv-lead{order:3}
+html body .adv .adv-top .adv-sub{order:4}}
 </style>
 <style>/* 11/11: footer name animation — letters rise in, then a light ripple runs through FAMBRINI; hover makes letters hop */
 footer .big .nw{display:inline-block;white-space:nowrap;clip-path:inset(-0.2em -0.1em 0 -0.1em);vertical-align:top}
