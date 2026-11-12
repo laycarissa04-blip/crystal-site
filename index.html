@@ -1782,7 +1782,7 @@ html body .tv h2.tx-in .tvhl::after,html body .tv h2:hover .tvhl::after{animatio
 @media (prefers-reduced-motion:reduce){html body .tv h2 .tvhl::after{animation:none!important}}
 /* warm editorial palette: paper, cream, white and soft gold carry the page; burnt orange is a small accent; black is for type */
 :root{--orange:#c8501e!important;--orange-hi:#d9683a!important;--champagne:#c9b48a;--cream:#efe7d8}
-html body .facts dt,html body .work .k,html body .credit-row .k,html body .pf .pf-in p.pf-sub,html body .adv .adv-lab{color:#866838!important}
+html body .facts dt,html body .work .k,html body .credit-row .k,html body .pf .pf-in p.pf-sub,html body .adv .adv-lab,html body .about h2 .ser,html body .tv .seen>span:first-child{color:#6f6a64!important}
 html body .lg-name span{color:var(--champagne)!important}
 html body footer .big .ser{color:var(--champagne)!important}
 html body .btn:hover,html body .arr:hover,html body .v-arw button:hover,html body .tv .v-arw button:hover{background:#866838!important;border-color:#866838!important;color:#fff!important}
@@ -1790,7 +1790,8 @@ html body .btn.w:hover{background:var(--champagne)!important;color:#1d1916!impor
 html body .dock a:hover{background:#866838!important}
 html body .chip{background:var(--cream)!important;color:#1d1916!important}
 html body .chip.gld{background:#b8955a!important;color:#fff!important}
-html body .pods-h .chip,html body .kick .hl{background:#b8955a!important;color:#1d1916!important}
+html body .kick .hl{background:var(--orange)!important;color:#fff!important}
+html body .pods-h .chip{background:var(--champagne)!important;color:#1d1916!important}
 html body .listings .intro .kick .hl{background-image:none!important;background-size:auto!important}
 html body .tv .pods .pods-h>span:nth-child(2){color:#cbb68f!important}
 /* no orange on black anywhere: dark areas use champagne instead */
@@ -1798,6 +1799,8 @@ html body .s-reel h2 .ser{border-left-color:var(--champagne)!important}
 html body .s-reel h2 .ser .w::before{background:var(--champagne)!important}
 html body .cv-bar button::before,html body .loader .line{background:var(--champagne)!important}
 html body .overlay #menuClose{background:var(--champagne)!important;color:#1d1916!important}
+/* accent system: on light backgrounds the one accent is burnt orange (section labels, drop cap, quote bars, icons); on dark backgrounds it is champagne; small labels are warm gray */
+html body .talk .pods-h .chip{background:var(--orange)!important;color:#fff!important}
 </style>
 <style>/* 11/11: footer name animation — letters rise in, then a light ripple runs through FAMBRINI; hover makes letters hop */
 footer .big .nw{display:inline-block;white-space:nowrap;clip-path:inset(-0.2em -0.1em 0 -0.1em);vertical-align:top}
