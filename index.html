@@ -1701,20 +1701,56 @@ html body .about h2 .ser.vlist{display:block!important;overflow:hidden;padding:0
 <style>/* 11/11: modeling portfolio subhead */
 html body .pf .pf-in p.pf-sub{margin:0 0 10px!important;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#b8451a}
 </style>
-<style>/* 11/11: Advisory editorial spread: drop-cap paragraph left, column rule, "By the numbers" ruled 2x2 right */
-html body .adv .adv-mid{margin-top:clamp(36px,4vw,56px);padding-top:clamp(28px,3vw,40px);border-top:1px solid var(--line)}
-html body .adv .adv-sub{margin:0;color:var(--ink);font-size:clamp(19px,1.7vw,25px);line-height:1.55}
+<style>/* 11/11: Advisory editorial spread on the same grid as the intro: drop-cap paragraph under the heading, "By the numbers" ruled 2x2 under the lead; tighter spacing */
+html body .adv .adv-mid{margin-top:clamp(26px,2.6vw,36px);padding-top:clamp(24px,2.4vw,32px);border-top:1px solid var(--line)}
+html body .adv .adv-sub{margin:0;color:var(--ink);font-size:clamp(20px,1.95vw,28px);line-height:1.45}
 html body .adv .adv-sub::first-letter{float:left;font-family:var(--head);font-size:4.3em;line-height:.8;color:var(--orange);margin:.07em .12em 0 0;text-transform:uppercase}
-html body .adv .adv-lab{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#b8451a;margin:0 0 14px}
+html body .adv .adv-lab{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#b8451a;margin:0 0 10px;line-height:1}
 html body .adv .adv-mid .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:0;border-top:1px solid var(--line)}
-html body .adv .adv-mid .stat{margin:0!important;padding:clamp(16px,1.6vw,22px) clamp(16px,1.8vw,26px) clamp(18px,1.8vw,24px) 0;border:0;border-bottom:1px solid var(--line);background:none}
-html body .adv .adv-mid .stat:nth-child(2n){padding-left:clamp(16px,1.8vw,26px);border-left:1px solid var(--line)}
-html body .adv .adv-mid .stat .n{font-size:clamp(36px,3.5vw,56px)}
-html body .adv .adv-mid .stat .c{margin-top:6px}
-html body .adv .adv-num{margin-top:32px}
-@media (min-width:1101px){html body .adv .adv-mid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start}
-html body .adv .adv-sub{padding-right:clamp(32px,4vw,64px)}
-html body .adv .adv-num{margin:0;padding-left:clamp(32px,4vw,64px);border-left:1px solid var(--line);align-self:stretch}}
+html body .adv .adv-mid .stat{margin:0!important;padding:clamp(12px,1.2vw,16px) clamp(14px,1.6vw,22px) clamp(12px,1.2vw,16px) 0;border:0;border-bottom:1px solid var(--line);background:none}
+html body .adv .adv-mid .stat:nth-child(2n){padding-left:clamp(14px,1.6vw,22px);border-left:1px solid var(--line)}
+html body .adv .adv-mid .stat .n{font-size:clamp(34px,3.2vw,50px)}
+html body .adv .adv-mid .stat .c{margin-top:4px}
+html body .adv .adv-num{margin-top:26px}
+html body .adv .adv-g{margin-top:clamp(28px,2.8vw,40px);padding-top:clamp(24px,2.4vw,32px)}
+@media (min-width:1101px){html body .adv .adv-mid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);column-gap:clamp(40px,5vw,88px);align-items:start}
+html body .adv .adv-num{margin:0}
+html body .adv .adv-g{row-gap:28px!important}}
+/* listings: heavy divider runs across the whole section, not just the intro column */
+html body .listings .lst{border-top:6px solid var(--black);padding-top:clamp(20px,2vw,28px)}
+html body .listings .lst .intro{border-top:0;padding-top:0}
+/* advisory items: same columns as the spread above, text fills its column */
+html body .adv .adv-i p{max-width:none}
+@media (min-width:1101px){html body .adv .adv-g{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)!important;column-gap:clamp(40px,5vw,88px)!important}
+html body .adv .adv-g .adv-i:nth-child(odd){padding-right:clamp(0px,6vw,110px)}}
+/* listings intro: button sits beside the arrows; no second heavy rule under it (the section rule above does the job) */
+html body .listings .lst .intro{grid-template-columns:auto 1fr;column-gap:12px;border-bottom:0;padding-bottom:0}
+html body .listings .lst .intro>*{grid-column:1/-1}
+html body .listings .lst .intro .ctrl{grid-column:1}
+html body .listings .lst .intro .btn{grid-column:2;justify-self:start;align-self:center}
+/* listings carousel stops at the right margin (no bleed past the page edge) */
+html body .listings .track{margin-right:0!important;padding-right:0!important}
+/* even margins: nothing runs past the page margins (Watch row, portfolio strip, heading marker boxes) */
+html body .tv .vgrid{margin-left:0!important;margin-right:0!important}
+html body .pf-strip{margin-right:0!important;padding-right:0!important}
+html body .listings .lh .hl,html body .tv h2 .tvhl{margin-left:0!important}
+/* listings cards: whole card lifts on hover like the Watch row (room added so the scroller doesn't clip it) */
+html body .listings .track{padding:14px 0 22px 10px!important;margin:-14px 0 0 -10px!important;scroll-padding-left:10px}
+html body .listings .track>.pc{transition:transform .45s cubic-bezier(.2,.8,.2,1);transform-origin:center}
+@media (hover:hover){html body .listings .track>.pc:hover{transform:scale(1.04);z-index:2}}
+/* portfolio intro: button sits beside the arrows, like Listings */
+html body .pf .pf-in{display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center}
+html body .pf .pf-in>*{grid-column:1/-1}
+html body .pf .pf-in .pf-ctrl{grid-column:1;margin-bottom:0!important}
+html body .pf .pf-in .btn{grid-column:2;justify-self:start}
+html body .pf .pf-in .btn{padding-left:20px;padding-right:20px;letter-spacing:.14em;white-space:nowrap}
+@media (min-width:901px){html body .pf .pfg{grid-template-columns:360px minmax(0,1fr)!important}}
+/* follow dock: stands vertically in the right page margin when there is room (same show/hide rules as before) */
+html body.dock-side .dock{left:auto!important;right:var(--dock-r,12px)!important;bottom:auto!important;top:50%!important;transform:translateY(-50%)!important;flex-direction:column!important;padding:6px!important;gap:6px!important}
+html body.dock-side .dock .dsep{width:22px!important;height:1px!important;margin:3px 0!important}
+html body.dock-side .dock .dl{display:none!important}
+html body.dock-side .dock a{width:34px!important;height:34px!important}
+html body.dock-side .dock svg{width:15px;height:15px}
 </style>
 <style>/* 11/11: footer name animation — letters rise in, then a light ripple runs through FAMBRINI; hover makes letters hop */
 footer .big .nw{display:inline-block;white-space:nowrap;clip-path:inset(-0.2em -0.1em 0 -0.1em);vertical-align:top}
@@ -1735,23 +1771,46 @@ split(b);const vh=document.createElement("span");vh.className="vh";vh.textConten
 b.querySelectorAll(".ser .ch").forEach((l,k)=>l.style.setProperty("--i",k+3));
 if(matchMedia("(prefers-reduced-motion: reduce)").matches||!("IntersectionObserver" in window))return;b.classList.add("anim");let t;
 new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>=.6){if(!b.classList.contains("go")){b.classList.add("go");clearTimeout(t);t=setTimeout(()=>b.classList.add("ready"),2600)}}else if(!e.isIntersecting){clearTimeout(t);b.classList.remove("go","ready")}}),{threshold:[0,.6]}).observe(b)})();</script>
-<style>/* 11/11: text reveal — headings rise word by word out of a mask, other text glides up as you scroll; replaces the old block reveal */
+<script>/* follow dock: move to the right margin when it fits */(function(){const d=document.querySelector(".dock");const w=document.querySelector("main section:not(.cover) .wrap");if(!d||!w)return;
+const fit=()=>{const cs=getComputedStyle(w),r=w.getBoundingClientRect();const m=document.documentElement.clientWidth-(r.right-parseFloat(cs.paddingRight));const dw=46;
+ if(m>=dw+14){document.body.classList.add("dock-side");document.documentElement.style.setProperty("--dock-r",Math.round((m-dw)/2)+"px")}else document.body.classList.remove("dock-side")};
+fit();addEventListener("resize",fit);addEventListener("load",fit)})();</script>
+<style>/* 11/11: scroll reveal for the whole page — every block glides in as it enters, from below when scrolling down and from above when scrolling up, and replays each time; headings rise word by word out of a mask. Uses the separate `translate` property + keyframes so hover effects (transform/transitions) are untouched. */
 .rv{opacity:1!important;transform:none!important;transition:none!important}
 .tx-on .tx-w{display:inline-block;clip-path:inset(-.3em -.12em -.04em -.12em);vertical-align:top}
-.tx-on .tx-w>span{display:inline-block;transform:translateY(112%);transition:transform 1s cubic-bezier(.19,1,.22,1);transition-delay:calc(var(--d,0ms) + var(--k,0) * 70ms)}
-.tx-on .tx-u{opacity:0;transform:translateY(.45em);transition:opacity .8s ease,transform 1s cubic-bezier(.19,1,.22,1);transition-delay:calc(var(--d,0ms) + var(--k,0) * 70ms)}
-.tx-on .tx-b{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform 1.1s cubic-bezier(.19,1,.22,1);transition-delay:var(--d,0ms)}
-.tx-on .tx-in .tx-w>span,.tx-on .tx-in.tx-u,.tx-on .tx-in .tx-u,.tx-on .tx-b.tx-in{transform:none;opacity:1}
-@media (prefers-reduced-motion:reduce){.tx-on .tx-w>span,.tx-on .tx-u,.tx-on .tx-b{transform:none!important;opacity:1!important;transition:none!important}}
+.tx-on .tx-wi{display:inline-block}
+html body.tx-ready .tx-h:not(.tx-in) .tx-wi{translate:0 112%}
+html body.tx-ready .tx-h.tx-in .tx-wi{animation:txWord 1s cubic-bezier(.19,1,.22,1) both;animation-delay:calc(var(--d,0ms) + var(--k,0) * 70ms)}
+html body.tx-ready .tx-h.tx-in.tx-dn .tx-wi{animation-name:txWordDn}
+html body.tx-ready .tx-h:not(.tx-in) .tx-u,html body.tx-ready .tx-b:not(.tx-in){opacity:0!important}
+html body.tx-ready .tx-h.tx-in .tx-u{animation:txUp .9s cubic-bezier(.19,1,.22,1) both;animation-delay:calc(var(--d,0ms) + var(--k,0) * 70ms)}
+html body.tx-ready .tx-b.tx-in{animation:txUp 1s cubic-bezier(.19,1,.22,1) both;animation-delay:var(--d,0ms)}
+html body.tx-ready .tx-b.tx-in.tx-dn,html body.tx-ready .tx-h.tx-in.tx-dn .tx-u{animation-name:txDn}
+@keyframes txWord{from{translate:0 112%}to{translate:0 0}}
+@keyframes txWordDn{from{translate:0 -112%}to{translate:0 0}}
+@keyframes txUp{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
+@keyframes txDn{from{opacity:0;translate:0 -28px}to{opacity:1;translate:0 0}}
+@media (prefers-reduced-motion:reduce){html body.tx-ready .tx-b,html body.tx-ready .tx-u,html body.tx-ready .tx-wi{opacity:1!important;translate:none!important;animation:none!important}}
 </style>
-<script>/* text reveal */(function(){if(matchMedia("(prefers-reduced-motion: reduce)").matches||!("IntersectionObserver" in window))return;
-const skip=el=>el.closest(".cover,.track,.vgrid,.lst .intro h2,footer");
-const heads=[...document.querySelectorAll("main section h2.H")].filter(h=>!skip(h)&&!h.classList.contains("lh"));
-heads.forEach(h=>{let k=0;[...h.childNodes].forEach(n=>{if(n.nodeType===3){const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){f.appendChild(document.createTextNode(" "));return}const m=document.createElement("span");m.className="tx-w";const i=document.createElement("span");i.textContent=w;i.style.setProperty("--k",k++);m.appendChild(i);f.appendChild(m)});n.replaceWith(f)}else if(n.nodeType===1){n.classList.add("tx-u");n.style.setProperty("--k",k++)}})});
-const blocks=[...document.querySelectorAll("main section :is(p,h3,dt,dd,.kick,.stats,.pf-ctrl)")].filter(e=>!skip(e)&&!e.closest(".H")&&!e.parentElement.closest(".tx-b,p,h3,.kick,.btn"));
+<script>/* scroll reveal */(function(){if(matchMedia("(prefers-reduced-motion: reduce)").matches||!("IntersectionObserver" in window))return;
+const out=e=>e.closest(".cover,.vgrid .vc,.vtrack > *,.big");
+/* headings: split text into masked words; inline children (rotating words, marker) move as one unit */
+const heads=[...document.querySelectorAll("main section h2.H")].filter(h=>!out(h));
+heads.forEach(h=>{h.classList.add("tx-h");let k=0;
+ if(h.classList.contains("lh")){h.querySelectorAll(".ln>span").forEach(s=>{s.classList.add("tx-wi");s.style.setProperty("--k",k++)});return}
+ [...h.childNodes].forEach(n=>{if(n.nodeType===3){const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){f.appendChild(document.createTextNode(" "));return}const m=document.createElement("span");m.className="tx-w";const i=document.createElement("span");i.className="tx-wi";i.textContent=w;i.style.setProperty("--k",k++);m.appendChild(i);f.appendChild(m)});n.replaceWith(f)}else if(n.nodeType===1){n.classList.add("tx-u");n.style.setProperty("--k",k++)}})});
+/* blocks: text, images, cards, buttons — outermost match only */
+const SEL="main section:not(.cover) :is(p,h3,dt,dd,.kick,.adv-lab,.btn,.ctrl,.pf-ctrl,.stats,figure,img,video,picture,.pc,.tk,.aw,.work>a,.adv-i .ic,.vgrid,.facts>div,.credit-row,.more), footer .wrap>*:not(.big)";
+const all=[...document.querySelectorAll(SEL)].filter(e=>!out(e)&&!e.closest(".H"));
+const set=new Set(all);const blocks=all.filter(e=>{let p=e.parentElement;while(p){if(set.has(p))return false;p=p.parentElement}return true});
 blocks.forEach(e=>e.classList.add("tx-b"));
-document.documentElement.classList.add("tx-on");
-const io=new IntersectionObserver(es=>{let n=0;es.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top||a.boundingClientRect.left-b.boundingClientRect.left).forEach(e=>{const t=e.target;t.style.setProperty("--d",Math.min(n++,8)*90+"ms");t.classList.add("tx-in");io.unobserve(t);setTimeout(()=>{t.style.removeProperty("--d");if(t.classList.contains("tx-b"))t.classList.remove("tx-b","tx-in")},2600)})},{rootMargin:"0px 0px -10% 0px"});
-heads.concat(blocks).forEach(e=>io.observe(e));})();</script>
+const els=heads.concat(blocks);
+let dir=1,lastY=scrollY;addEventListener("scroll",()=>{const y=scrollY;if(y!==lastY){dir=y>lastY?1:-1;lastY=y}},{passive:true});
+document.documentElement.classList.add("tx-on");document.body.classList.add("tx-ready");
+const enter=new IntersectionObserver(es=>{let n=0;const vis=es.filter(e=>e.isIntersecting&&!e.target.classList.contains("tx-in"));
+ vis.sort((a,b)=>dir*((a.boundingClientRect.top-b.boundingClientRect.top)||(a.boundingClientRect.left-b.boundingClientRect.left)));
+ vis.forEach(e=>{const t=e.target;const fromTop=e.boundingClientRect.top<innerHeight/2&&dir<0;t.classList.toggle("tx-dn",fromTop);t.style.setProperty("--d",Math.min(n++,6)*80+"ms");t.classList.add("tx-in")})},{rootMargin:"-6% 0px -6% 0px"});
+const leave=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)e.target.classList.remove("tx-in","tx-dn")}),{rootMargin:"0px"});
+els.forEach(e=>{enter.observe(e);leave.observe(e)});})();</script>
 </body>
 </html>
