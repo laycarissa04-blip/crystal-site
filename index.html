@@ -1921,6 +1921,18 @@ html body .lw-l{margin-top:12px;font-size:10px;letter-spacing:.24em}
 html body .lw-s{margin-top:5px;font-size:12px;white-space:nowrap}
 html body .lw-i{margin-top:14px;width:18px;height:18px;stroke-width:1.4}
 @media (max-width:860px){html body .lw-s{white-space:normal}}
+/* light divider above the awards */
+html body .honors.lw-row{border-top:1px solid var(--line)!important;margin-top:clamp(28px,3vw,40px)!important}
+/* round spotlight: hovering an award darkens the page around a soft circle of light, and the award lifts */
+@media (hover:hover){
+html body .lw{position:relative;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+html body .lw::before{content:"";position:absolute;left:50%;top:50%;width:400vmax;height:400vmax;transform:translate(-50%,-50%);pointer-events:none;z-index:-1;opacity:0;transition:opacity .55s ease;background:radial-gradient(circle at center,rgba(255,250,240,.0) 0,rgba(255,250,240,0) 170px,rgba(8,8,8,.9) 250px,rgba(8,8,8,.92) 100%)}
+html body .lw:hover{z-index:70;transform:scale(1.08) translateY(-4px)}
+html body .lw:hover::before{opacity:1}
+html body .lw:hover .lb{fill:#8a6f45}html body .lw:hover .lb .stm{stroke:#8a6f45}
+html body .lw .lb,html body .lw .lb .stm{transition:fill .5s,stroke .5s}
+html body .honors.lw-row,html body .tv,html body .tv .wrap{overflow:visible!important}
+}
 </style>
 <style>/* 11/11: footer name animation — letters rise in, then a light ripple runs through FAMBRINI; hover makes letters hop */
 footer .big .nw{display:inline-block;white-space:nowrap;clip-path:inset(-0.2em -0.1em 0 -0.1em);vertical-align:top}
