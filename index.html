@@ -1138,10 +1138,10 @@ body.atcover .dock{opacity:0;visibility:hidden}
     <div class="adv-top">
       <div class="kick"><span class="hl">Advisory</span></div>
       <h2 class="H">Strategic Advisory &amp; Business Growth</h2>
-      <p class="adv-lead">A creative entrepreneur and strategic connector, Crystal Fambrini brings together vision, capital, talent, and opportunity to transform ambitious ideas into successful business ventures.</p>
+      <p class="adv-lead">A creative entrepreneur and strategic connector, Crystal Fambrini brings together <span class="kw" style="--i:0">vision</span>, <span class="kw" style="--i:1">capital</span>, <span class="kw" style="--i:2">talent</span>, and <span class="kw" style="--i:3">opportunity</span> to transform <span class="kw" style="--i:4">ambitious ideas</span> into successful business ventures.</p>
     </div>
     <div class="adv-mid">
-      <p class="adv-sub">Blending creative vision with business acumen, Crystal operates at the intersection of media, technology, entrepreneurship, and influential relationships, connecting people, ideas, and opportunities to drive meaningful business growth.</p>
+      <p class="adv-sub">Blending creative vision with business acumen, Crystal operates at the intersection of <span class="kw" style="--i:0">media</span>, <span class="kw" style="--i:1">technology</span>, <span class="kw" style="--i:2">entrepreneurship</span>, and <span class="kw" style="--i:3">influential relationships</span>, connecting people, ideas, and opportunities to drive <span class="kw" style="--i:4">meaningful business growth</span>.</p>
       <div class="adv-num"><div class="adv-lab">By the numbers</div>
       <div class="stats">
       <div class="stat"><div class="n">$10M</div><div class="c">Media company valuation &amp; sale</div></div>
@@ -1751,6 +1751,10 @@ html body.dock-side .dock .dsep{width:22px!important;height:1px!important;margin
 html body.dock-side .dock .dl{display:none!important}
 html body.dock-side .dock a{width:34px!important;height:34px!important}
 html body.dock-side .dock svg{width:15px;height:15px}
+/* Advisory buzzwords: a soft gold marker sweeps under each key word, one after another, as the paragraph comes into view */
+html body .adv .kw{background:linear-gradient(rgba(196,160,96,.5),rgba(196,160,96,.5)) no-repeat 0 90%/0% 30%;padding:0 .05em;margin:0 -.05em;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .75s cubic-bezier(.77,0,.18,1)}
+html body .adv .tx-in .kw{background-size:100% 30%;transition-delay:calc(.55s + var(--i,0) * .22s)}
+@media (prefers-reduced-motion:reduce){html body .adv .kw{background-size:100% 30%;transition:none}}
 </style>
 <style>/* 11/11: footer name animation — letters rise in, then a light ripple runs through FAMBRINI; hover makes letters hop */
 footer .big .nw{display:inline-block;white-space:nowrap;clip-path:inset(-0.2em -0.1em 0 -0.1em);vertical-align:top}
