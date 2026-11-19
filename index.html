@@ -2116,6 +2116,16 @@ html body .tv .facts dd a{color:inherit;text-decoration-color:var(--orange)}
 html body .tv .facts.wide{margin-bottom:clamp(40px,4.5vw,64px)!important}
 /* no spotlight/dim overlay when hovering an award (Nov 18) */
 html body .lw::before,html body .lw:hover::before{content:none!important;display:none!important}
+/* Meet Crystal (Nov 18): no typing — heading is simply there; quote and bio paragraphs fade up whole, quickly */
+html body .about .tx-type .tc{visibility:visible!important;animation:none!important}
+html body .about .tx-caret{display:none!important}
+html body.tx-ready .about .tx-words .tw{opacity:1!important;animation:none!important;filter:none!important;translate:none!important}
+html body.tx-ready .about .tx-words{transition:opacity .6s ease,translate .7s cubic-bezier(.19,1,.22,1)}
+html body.tx-ready .about .tx-words:not(.tx-in){opacity:0;translate:0 14px}
+html body.tx-ready .about .bio > p:nth-of-type(2){transition-delay:.08s}
+html body .about .bio.sq-go>.more>summary{animation-delay:.2s!important}
+html body .about .bio .more .tw2{opacity:1!important;animation:none!important}
+html body .about .bio details.more.bio-go[open]>p{animation:bioIn .6s cubic-bezier(.19,1,.22,1) both!important}
 </style>
 </body>
 </html>
