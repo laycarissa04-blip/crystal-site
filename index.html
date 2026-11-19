@@ -2114,6 +2114,8 @@ html body .tv .facts dt{color:#b5461b!important}
 html body .tv .facts dd{color:var(--ink)!important}
 html body .tv .facts dd a{color:inherit;text-decoration-color:var(--orange)}
 html body .tv .facts.wide{margin-bottom:clamp(40px,4.5vw,64px)!important}
+/* no spotlight/dim overlay when hovering an award (Nov 18) */
+html body .lw::before,html body .lw:hover::before{content:none!important;display:none!important}
 </style>
 </body>
 </html>
